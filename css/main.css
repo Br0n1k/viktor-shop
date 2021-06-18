@@ -5,16 +5,20 @@ body{
    font-family: 'Roboto', sans-serif;
 }
 div{
-   display: flex;
+   
 }
 i{
    font-size: 24px;
    color: var(--light);
 }
-
+a{
+   text-decoration: none;
+}
 :root {
    --light: #f6f8fa;
    --dark:  #202020;
+   --orange:  #f5a81b;
+   --blue: #383CC1;
  }
 
 
@@ -25,32 +29,90 @@ i{
  
 /* main styles */
 
+.navbar a, .navbar i{
+   -webkit-transition: all 0.2s ease;;
+   -moz-transition: all 0.2s ease;;
+   -o-transition: all 0.2s ease;;
+   transition: all 0.2s ease;
+}
+.navbar a:hover, .navbar i:hover{
+   color: var(--orange);
+}
 .navbar{
-   background-color: #383CC1;
+   background-color: var(--blue);
    display: block;
-   padding: 5px 0;
+   padding: 14px 0;
    color: var(--light);
 }
 .navbar a{
    color: var(--light);
-   text-decoration: none;
+   margin-right: 20px;
 }
 .nav-inside{
    justify-content: space-between;
    align-items: center;
    max-width: 95%;
    margin: 0 auto;
+   display: flex;
+}
+.nav-inside h2{
+   margin: 0;
+   margin-right: 20px;
 }
 .navbar .nav-left{
-   
+   align-items: baseline;
+   display: flex;
 }
 .navbar .nav-right{
-
+   align-items: baseline;
+   display: flex;
+}
+.wrapper{
+   
 }
 
 
+/* SLIDER */
 
-
+.slider{
+   display: block;
+   position: relative;
+   overflow: hidden;
+}
+.slider-line{
+   display: flex;
+   transition: all 1s ease;
+}
+.slider .slider-line .slide{
+   max-width: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+}
+.slider .slider-line .slide img{
+   min-width: 100%;
+   height: auto;
+}
+.slider .slider-absolute{
+   position: absolute;
+   top: 7%;
+   left: 7%;
+}
+.slider .slider-buttons{
+   position: absolute;
+   bottom: 5%;
+   left: 3%;
+}
+.slider .slider-buttons a{
+   font-size: 50px;
+   -webkit-transition: all 0.2s ease;;
+   -moz-transition: all 0.2s ease;;
+   -o-transition: all 0.2s ease;;
+   transition: all 0.2s ease;
+}
+.slider .slider-buttons a:hover{
+   color: var(--orange);
+}
 
 
 
@@ -83,9 +145,15 @@ i{
 
 /* Media stuff */
 
-@media screen and (min-width:1600px){
+@media screen and (min-width:1200px){
    .nav-inside{
       max-width: 80%;
+   }
+
+}
+@media screen and (min-width:1600px){
+   .nav-inside{
+      max-width: 75%;
    }
 
 }
