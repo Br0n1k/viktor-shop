@@ -29,20 +29,30 @@ function init(){
 }
 
 //click buttons
-sliderRight.addEventListener('click', function (){
+
+function rightButton(){
    slideRight();
    clearInterval(slideMe);
    setTimeout(autoslide, 4000);
-});
-sliderLeft.addEventListener('click', function(){
+}
+function leftButton(){
+   slideLeft();
+   clearInterval(slideMe);
+   setTimeout(autoslide, 4000);
+}
+sliderRight.addEventListener('click', rightButton);
+sliderLeft.addEventListener('click', leftButton);
+
+
+
+
+function slideLeft(){
    count--;
    if(count < 0){
       count = images.length -1;
    }
    rollSlider();
-   clearInterval(slideMe);
-   setTimeout(autoslide, 4000);
-});
+}
 
 //for autoslide and right button
 function slideRight(){
@@ -84,4 +94,29 @@ init();
 autoslide();
 
 
+//swipe
+
+sliderLine.addEventListener('touchstart', handleTouchStart);
+sliderLine.addEventListener('touchmove', handleTouchMove);
+let x1 = null;
+
+function handleTouchStart(event){
+   const firstTouch = event.touches[0];
+   x1 = firstTouch.clientX;
+}
+function handleTouchMove(event){
+   if (!x1){
+      return false;
+   }
+   let x2 = event.touches[0].clientX;
+   let xDiff = x2 - x1;
+
+   if (xDiff > 0){
+      leftButton();
+   }
+   else{
+      rightButton();
+   }
+   x1 = null;
+}
 
