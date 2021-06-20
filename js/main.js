@@ -8,16 +8,14 @@ cartLink.addEventListener('mouseout', () => cartIcon.style.color = "#f6f8fa");
 
 //MAIN SLIDER
 
-const slides = document.querySelectorAll('.slider .slider-line .slide');
-
-const images = document.querySelectorAll('.slider .slider-line .slide img');
+let images = document.querySelectorAll('.slider .slider-line .slide img');
 const sliderLine = document.querySelector('.slider .slider-line');
-
 const sliderRight = document.querySelector('.slider .slider-right');
 const sliderLeft = document.querySelector('.slider .slider-left');
 
 let count = 0;
 let slWidth;
+let slideMe;   //autoslide timer
 
 function init(){
    slWidth = document.querySelector('.slider').offsetWidth;
@@ -30,12 +28,11 @@ function init(){
    rollSlider();
 }
 
-sliderRight.addEventListener('click', function(){
-   count++;
-   if(count >= images.length){
-      count = 0;
-   }
-   rollSlider();
+//click buttons
+sliderRight.addEventListener('click', function (){
+   slideRight();
+   clearInterval(slideMe);
+   setTimeout(autoslide, 4000);
 });
 sliderLeft.addEventListener('click', function(){
    count--;
@@ -43,19 +40,48 @@ sliderLeft.addEventListener('click', function(){
       count = images.length -1;
    }
    rollSlider();
+   clearInterval(slideMe);
+   setTimeout(autoslide, 4000);
 });
 
+//for autoslide and right button
+function slideRight(){
+   count++;
+   if(count >= images.length){
+      count = 0;
+   }
+   rollSlider();
+}
+
+//change slider line px position
 function rollSlider(){
    sliderLine.style.transform = 'translate(-' + count * slWidth + 'px)';
 }
 
+//autoslide
+function autoslide(){
+   clearInterval(slideMe);
+   slideMe = setInterval( slideRight, 4000);
+}
 
 
+//change slider size on viewport resize
+window.addEventListener('resize', ()=>{
+   init();
+   if(window.innerWidth < 660){
+      for (let i = 0; i < images.length; i++) {
+         images[i].src = `/images/slider-half/${[i+1]}.jpg`;
+      }
+   }
+   else if(window.innerWidth >= 660){
+      for (let i = 0; i < images.length; i++) {
+         images[i].src = `/images/slider-full/${[i+1]}.jpg`;
+      }
+   }
+});
 
-
-
-
-
-window.addEventListener('resize', init);
 init();
+autoslide();
+
+
 

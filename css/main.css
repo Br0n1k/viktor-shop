@@ -4,9 +4,6 @@ body{
    padding: 0;
    font-family: 'Roboto', sans-serif;
 }
-div{
-   
-}
 i{
    font-size: 24px;
    color: var(--light);
@@ -17,8 +14,9 @@ a{
 :root {
    --light: #f6f8fa;
    --dark:  #202020;
-   --orange:  #f5a81b;
+   --orange:  #fdab11;
    --blue: #383CC1;
+   --aqua: #35BDD0;
  }
 
 
@@ -57,7 +55,7 @@ a{
 }
 .nav-inside h2{
    margin: 0;
-   margin-right: 20px;
+   margin-right: 24px;
 }
 .navbar .nav-left{
    align-items: baseline;
@@ -68,7 +66,8 @@ a{
    display: flex;
 }
 .wrapper{
-   
+   max-width: 1920px;
+   margin: 0 auto;
 }
 
 
@@ -101,7 +100,7 @@ a{
 .slider .slider-buttons{
    position: absolute;
    bottom: 5%;
-   left: 3%;
+   right: 5%;
 }
 .slider .slider-buttons a{
    font-size: 50px;
@@ -113,14 +112,65 @@ a{
 .slider .slider-buttons a:hover{
    color: var(--orange);
 }
+.slider-catalog-button{
+   -webkit-transition: all 0.2s ease;;
+   -moz-transition: all 0.2s ease;;
+   -o-transition: all 0.2s ease;;
+   transition: all 0.2s ease;
+   padding: 14px 18px;
+   background-color: var(--blue);
+   color: var(--light);
+   border: 3px solid #161cb1;
+}
+.slider-catalog-button:hover{
+   color: var(--orange);
+   background-color: #161cb1;
+}
 
+/* BEST-SELLERS */
 
-
-
-
-
-
-
+.best-sellers h1{
+   margin-top: 60px;
+   text-align: center;
+}
+.item-cards{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+}
+.item-cards .card-wrap{
+   display: flex;
+   margin: 40px 10px 0;
+}
+.item-cards .item-card{
+   max-width: 400px;
+   padding: 4px 12px;
+   border: 2px solid gray;
+}
+.item-cards .item-card > div{
+   margin-top: 12px;
+   margin-bottom: 12px;
+}
+.item-cards .item-card .card-line{
+   min-height: 22px;
+}
+.item-cards .item-card .item-id{
+   float: left;
+}
+.item-cards .item-card .item-time{
+   float: right;
+}
+.item-cards .item-card img{
+   max-width: 300px;
+   margin: 0 auto;
+   display: block;
+}
+.item-cards .item-card .item-price{
+   float: left;
+}
+.item-cards .item-card .item-button{
+   float: right;
+}
 
 
 
@@ -144,16 +194,46 @@ a{
 
 
 /* Media stuff */
+@media screen and (max-width:670px){
+   /* надо другую картинку */
+}
 
+@media screen and (max-width:770px){
+   .slider h1{
+      font-size: 22px;
+   }
+   .slider h4{
+      font-size: 14px;
+   }
+   .slider-catalog-button{
+      padding: 10px 14px;
+   }
+}
+@media screen and (min-width:660px) and (max-width:900px){
+   .item-cards{
+      flex-wrap: wrap;
+   }
+}
+@media screen and (min-width:770px) and (max-width:900px){
+   .item-cards{
+      flex-wrap: wrap;
+   }
+   .item-cards .card-wrap{
+      width: 45%;
+   }
+}
 @media screen and (min-width:1200px){
    .nav-inside{
       max-width: 80%;
    }
-
+}
+@media screen and (min-width:1300px) and (max-width:1800px){
+   .item-cards{
+      flex-wrap: nowrap;
+   }
 }
 @media screen and (min-width:1600px){
    .nav-inside{
       max-width: 75%;
    }
-
 }
