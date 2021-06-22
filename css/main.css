@@ -315,7 +315,7 @@ textarea:focus, input:focus{
    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
    position: absolute;
    left: 1px;
-   bottom: -136px;
+   bottom: -93px;
    padding-top: 6px;
    padding-bottom: 4px;
 }
@@ -335,7 +335,6 @@ textarea:focus, input:focus{
 .questions .questions-form .choose-content .fa-telegram-plane{
    color: #0084C6;
 }
-
 .section button{
    width: 140px;
    /* align-self: center; */
@@ -355,10 +354,6 @@ textarea:focus, input:focus{
    color: var(--orange);
    background-color: var(--darkblue);
 }
-
-
-
-
 
 /* FOOTER */
 

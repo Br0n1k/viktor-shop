@@ -44,8 +44,6 @@ sliderRight.addEventListener('click', rightButton);
 sliderLeft.addEventListener('click', leftButton);
 
 
-
-
 function slideLeft(){
    count--;
    if(count < 0){
@@ -68,7 +66,6 @@ function rollSlider(){
    sliderLine.style.transform = 'translate(-' + count * slWidth + 'px)';
 }
 
-//autoslide
 function autoslide(){
    clearInterval(slideMe);
    slideMe = setInterval( slideRight, 4000);
@@ -119,4 +116,74 @@ function handleTouchMove(event){
    }
    x1 = null;
 }
+
+//FORM
+
+//choose menu
+let chooseContent = document.querySelector('.choose-content');
+let chooser = document.querySelector('#chooser');
+let chooseMenu = document.querySelector('.choose-content .choose-row');
+let menuOpened = false;
+
+window.addEventListener('click', (event) =>{
+   if(event.target.classList.contains('choose-click') && menuOpened == false){
+      chooseMenu.style.display = 'block';
+      menuOpened = true;
+   }
+   else if(menuOpened == true && !event.target.classList.contains('choose-not-click')){
+      chooseMenu.style.display = 'none';
+      menuOpened = false;
+   }
+   else if(menuOpened == true && event.target.classList.contains('choose-not-click')){
+      if(event.target.classList.contains('choose-tel')){
+         chooseContent.innerHTML = `
+         <a href="javascript:void(0);" value="phone" id="chooser" class="choose-click"><i class="choose-click fas fa-phone"></i> Телефон</a>
+         <div class="choose-row">
+            <a href="javascript:void(0);" value="viber" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
+            <a href="javascript:void(0);" value="telega" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
+         </div>`;
+         telMask();
+      }
+      else if(event.target.classList.contains('choose-viber')){
+         chooseContent.innerHTML = `
+         <a href="javascript:void(0);" value="viber" id="chooser" class="choose-click"><i class="choose-click fab fa-viber"></i> Viber</a>
+         <div class="choose-row">
+            <a href="javascript:void(0);" value="phone" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
+            <a href="javascript:void(0);" value="telega" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
+         </div>`;
+         viberMask();
+      }
+      else if(event.target.classList.contains('choose-telegram')){
+         chooseContent.innerHTML = `
+         <a href="javascript:void(0);" value="telegram" id="chooser" class="choose-click"><i class="choose-click fab fa-telegram-plane"></i> Telegram</a>
+         <div class="choose-row">
+            <a href="javascript:void(0);" value="phone" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
+            <a href="javascript:void(0);" value="viber" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
+         </div>`;
+         telegramMask();
+      }
+      chooseContent = document.querySelector('.choose-content');
+      chooser = document.querySelector('#chooser');
+      chooseMenu = document.querySelector('.choose-content .choose-row');
+      menuOpened = false;
+   }
+});
+
+//choose mask
+
+function telMask(){
+   
+}
+function viberMask(){
+
+}
+function telegramMask(){
+
+}
+
+
+
+
+
+
 
