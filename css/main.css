@@ -9,6 +9,7 @@ i{
    color: var(--light);
 }
 a{
+   font-family: 'Roboto', sans-serif;
    text-decoration: none;
    -webkit-transition: all 0.2s ease;;
    -moz-transition: all 0.2s ease;;
@@ -18,11 +19,15 @@ a{
 li{
    list-style-type: none;
 }
+textarea:focus, input:focus{
+   outline: 1px solid rgb(207, 207, 207);
+}
 :root {
    --light: #f6f8fa;
    --dark:  #202020;
    --orange:  #fdab11;
    --blue: #383CC1;
+   --darkblue: #161cb1;
    --aqua: #35BDD0;
  }
 
@@ -126,11 +131,11 @@ li{
    padding: 14px 18px;
    background-color: var(--blue);
    color: var(--light);
-   border: 3px solid #161cb1;
+   border: 3px solid var(--darkblue);
 }
 .slider-catalog-button:hover{
    color: var(--orange);
-   background-color: #161cb1;
+   background-color: var(--darkblue);
 }
 
 /* POPULAR and NEW */
@@ -183,6 +188,23 @@ li{
 .item-cards .item-card .item-button{
    float: right;
 }
+.item-cards .item-card .item-button a{
+   margin: 0 auto;
+   background-color: var(--blue);
+   border: none;
+   padding: 10px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   color: var(--light);
+   -webkit-transition: all 0.2s ease;;
+   -moz-transition: all 0.2s ease;;
+   -o-transition: all 0.2s ease;;
+   transition: all 0.2s ease;
+}
+.item-cards .item-card .item-button a:hover{
+   color: var(--orange);
+   background-color: var(--darkblue);
+}
 
 /* INFO */
 
@@ -226,6 +248,117 @@ li{
    text-align: center;
    margin-left: calc(50% - 90px);
 }
+
+/* QUESTIONS FORM */
+
+.questions .questions-inside{
+   display: flex;
+   justify-content: center;
+}
+.questions .questions-form{
+   display: flex;
+   justify-content: center;
+   min-width: 340px;
+   max-width: 600px;
+   flex-direction: column;
+   -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+   -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+   padding: 40px;
+   background-color: var(--light);
+   margin-top: 20px;
+}
+.questions .questions-form h4{
+   margin-top: 4px;
+}
+.questions .questions-form .choose-content{
+   width: 140px;
+   position: relative;
+}
+.questions .questions-form input, .questions .questions-form textarea{
+   border: none;
+   background-color: white;
+   padding: 8px 10px;
+   margin-top: 5px;
+   font-size: 16px;
+   font-family: 'Roboto', sans-serif;
+   border: 2px solid #d3e2f1;
+}
+.questions .questions-form label{
+   padding-left: 2px;
+   font-weight: bold;
+}
+.questions .questions-form .choose-content a{
+   display: block;
+   color: var(--dark);
+   font-size: 18px;
+   font-weight: bold;
+   padding: 10px 14px;
+}
+.questions .questions-form .choose-content #chooser{
+   display: block;
+   background-color: white;
+   padding: 4px 10px;
+   margin-top: 5px;
+   border: 2px solid #d3e2f1;
+}
+.questions .questions-form .choose-content #chooser:hover{
+   background-color: rgb(233, 233, 233);
+}
+.questions .questions-form .choose-content .choose-row{
+   /* display: block; */
+   display: none;
+   background-color: white;
+   width: 140px;
+   -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+   -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+   box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+   position: absolute;
+   left: 1px;
+   bottom: -136px;
+   padding-top: 6px;
+   padding-bottom: 4px;
+}
+.questions .questions-form .choose-content .choose-row a:hover{
+   background-color: rgb(233, 233, 233);
+}
+.questions .questions-form .choose-content i{
+   color: var(--dark);
+   font-size: 18px;
+}
+.questions .questions-form .choose-content .fa-phone{
+   color: blue;
+}
+.questions .questions-form .choose-content .fa-viber{
+   color: #793BAA;
+}
+.questions .questions-form .choose-content .fa-telegram-plane{
+   color: #0084C6;
+}
+
+.section button{
+   width: 140px;
+   /* align-self: center; */
+   margin: 0 auto;
+   background-color: var(--blue);
+   border: none;
+   padding: 10px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   color: var(--light);
+   -webkit-transition: all 0.2s ease;;
+   -moz-transition: all 0.2s ease;;
+   -o-transition: all 0.2s ease;;
+   transition: all 0.2s ease;
+}
+.section button:hover{
+   color: var(--orange);
+   background-color: var(--darkblue);
+}
+
+
+
+
 
 /* FOOTER */
 
