@@ -270,6 +270,7 @@ textarea:focus, input:focus{
 }
 .questions .questions-form h4{
    margin-top: 4px;
+   font-size: 18px;
 }
 .questions .questions-form .choose-content{
    width: 140px;
@@ -315,7 +316,7 @@ textarea:focus, input:focus{
    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
    position: absolute;
    left: 1px;
-   bottom: -93px;
+   bottom: -135px;
    padding-top: 6px;
    padding-bottom: 4px;
 }
@@ -335,6 +336,13 @@ textarea:focus, input:focus{
 .questions .questions-form .choose-content .fa-telegram-plane{
    color: #0084C6;
 }
+.questions .questions-form .choose-content .fa-at{
+   color: #464646;
+}
+.questions .questions-form .variant{
+   display: flex;
+   flex-direction: column;
+}
 .section button{
    width: 140px;
    /* align-self: center; */
@@ -353,6 +361,7 @@ textarea:focus, input:focus{
 .section button:hover{
    color: var(--orange);
    background-color: var(--darkblue);
+   cursor: pointer;
 }
 
 /* FOOTER */

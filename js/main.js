@@ -124,6 +124,8 @@ let chooseContent = document.querySelector('.choose-content');
 let chooser = document.querySelector('#chooser');
 let chooseMenu = document.querySelector('.choose-content .choose-row');
 let menuOpened = false;
+let variant = document.querySelector('.variant');
+
 
 window.addEventListener('click', (event) =>{
    if(event.target.classList.contains('choose-click') && menuOpened == false){
@@ -141,6 +143,7 @@ window.addEventListener('click', (event) =>{
          <div class="choose-row">
             <a href="javascript:void(0);" value="viber" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
             <a href="javascript:void(0);" value="telega" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
+            <a href="javascript:void(0);" value="email" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
          </div>`;
          telMask();
       }
@@ -150,6 +153,7 @@ window.addEventListener('click', (event) =>{
          <div class="choose-row">
             <a href="javascript:void(0);" value="phone" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
             <a href="javascript:void(0);" value="telega" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
+            <a href="javascript:void(0);" value="email" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
          </div>`;
          viberMask();
       }
@@ -159,35 +163,92 @@ window.addEventListener('click', (event) =>{
          <div class="choose-row">
             <a href="javascript:void(0);" value="phone" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
             <a href="javascript:void(0);" value="viber" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
+            <a href="javascript:void(0);" value="email" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
          </div>`;
          telegramMask();
+      }
+      else if(event.target.classList.contains('choose-email')){
+         chooseContent.innerHTML = `
+         <a href="javascript:void(0);" value="email" id="chooser" class="choose-click"><i class="choose-click fas fa-at"></i> Email</a>
+         <div class="choose-row">
+            <a href="javascript:void(0);" value="phone" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
+            <a href="javascript:void(0);" value="viber" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
+            <a href="javascript:void(0);" value="telega" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
+         </div>`;
+         emailMask();
       }
       chooseContent = document.querySelector('.choose-content');
       chooser = document.querySelector('#chooser');
       chooseMenu = document.querySelector('.choose-content .choose-row');
       menuOpened = false;
+
+      variant = document.querySelector('.variant');
    }
 });
 
 //choose mask
 
 function telMask(){
-   
+   variant.innerHTML = `<label for="tel">Введите телефон:</label>
+   <input type="tel" name="tel" id="tel" placeholder="+38(___)___-__-__" maxlength="18" required>`;
+   jQuery(function ($){
+      $("input[name='tel']").mask("+38(999) 999-99-99",{autoclear: false}).on('click', function(){
+         if ($(this).val() === '+38(___) ___-__-__') {
+            $(this).get(0).setSelectionRange(4, 4);
+        }
+      });
+   });
 }
+
 function viberMask(){
-
+   variant.innerHTML = `<label for="tel">Введите телефон:</label>
+   <input type="tel" name="tel" id="tel" placeholder="+38(___)___-__-__" maxlength="18" required>`;
+   jQuery(function ($){
+      $("input[name='tel']").mask("+38(999) 999-99-99",{autoclear: false}).on('click', function(){
+         if ($(this).val() === '+38(___) ___-__-__') {
+            $(this).get(0).setSelectionRange(4, 4);
+        }
+      });
+   });
 }
+
 function telegramMask(){
+   variant.innerHTML = `<label for="tel">Введите Telegram Username:</label>
+   <input type="text" name="tel" id="tel" placeholder="@Username" maxlength="18" required>`;
 
+   let telegramInput = document.querySelector('#tel');
+   let re = new RegExp('[a-zA-Z1-9]');
+   let re2 = new RegExp('[а-яёА-ЯЁ]');
+
+   telegramInput.addEventListener('input', (input)=>{
+      if(input.target.value[0].search(re) > -1){
+         return input.target.value = '@' + input.target.value;
+      }
+      if(input.target.value[0].search(re2) > -1){
+         console.log('qwe');
+         return input.target.value = '';
+      }
+      
+   });
+
+}
+function emailMask(){
+   variant.innerHTML = `<label for="email">Введите E-Mail:</label>
+   <input type="email" name="tel" id="tel" placeholder="Johnsnow@gmail.com" maxlength="18" required>`;
 }
 
 
 
 
-//TELEPHONE MASK
+//TELEPHONE MASK (jq maskedinput)
 
-
-
+jQuery(function ($){
+   $("input[name='tel']").mask("+38(999) 999-99-99",{autoclear: false}).on('click', function(){
+      if ($(this).val() === '+38(___) ___-__-__') {
+         $(this).get(0).setSelectionRange(4, 4);
+     }
+   });
+});
 
 
 
