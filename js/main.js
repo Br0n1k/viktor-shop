@@ -117,7 +117,7 @@ function handleTouchMove(event){
    x1 = null;
 }
 
-//FORM
+//SENDING FORM
 
 //choose menu
 let chooseContent = document.querySelector('.choose-content');
@@ -139,41 +139,41 @@ window.addEventListener('click', (event) =>{
    else if(menuOpened == true && event.target.classList.contains('choose-not-click')){
       if(event.target.classList.contains('choose-tel')){
          chooseContent.innerHTML = `
-         <a href="javascript:void(0);" value="phone" id="chooser" class="choose-click"><i class="choose-click fas fa-phone"></i> Телефон</a>
+         <a href="javascript:void(0);" data-value="phone" id="chooser" class="choose-click"><i class="choose-click fas fa-phone"></i> Телефон</a>
          <div class="choose-row">
-            <a href="javascript:void(0);" value="viber" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
-            <a href="javascript:void(0);" value="telega" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
-            <a href="javascript:void(0);" value="email" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
          </div>`;
          telMask();
       }
       else if(event.target.classList.contains('choose-viber')){
          chooseContent.innerHTML = `
-         <a href="javascript:void(0);" value="viber" id="chooser" class="choose-click"><i class="choose-click fab fa-viber"></i> Viber</a>
+         <a href="javascript:void(0);" data-value="viber" id="chooser" class="choose-click"><i class="choose-click fab fa-viber"></i> Viber</a>
          <div class="choose-row">
-            <a href="javascript:void(0);" value="phone" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
-            <a href="javascript:void(0);" value="telega" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
-            <a href="javascript:void(0);" value="email" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
          </div>`;
          viberMask();
       }
       else if(event.target.classList.contains('choose-telegram')){
          chooseContent.innerHTML = `
-         <a href="javascript:void(0);" value="telegram" id="chooser" class="choose-click"><i class="choose-click fab fa-telegram-plane"></i> Telegram</a>
+         <a href="javascript:void(0);" data-value="telegram" id="chooser" class="choose-click"><i class="choose-click fab fa-telegram-plane"></i> Telegram</a>
          <div class="choose-row">
-            <a href="javascript:void(0);" value="phone" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
-            <a href="javascript:void(0);" value="viber" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
-            <a href="javascript:void(0);" value="email" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-email"><i class="choose-not-click choose-email fas fa-at"></i> E-mail</a>
          </div>`;
          telegramMask();
       }
       else if(event.target.classList.contains('choose-email')){
          chooseContent.innerHTML = `
-         <a href="javascript:void(0);" value="email" id="chooser" class="choose-click"><i class="choose-click fas fa-at"></i> Email</a>
+         <a href="javascript:void(0);" data-value="email" id="chooser" class="choose-click"><i class="choose-click fas fa-at"></i> Email</a>
          <div class="choose-row">
-            <a href="javascript:void(0);" value="phone" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
-            <a href="javascript:void(0);" value="viber" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
-            <a href="javascript:void(0);" value="telega" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-tel"><i class="choose-not-click choose-tel fas fa-phone"></i> Телефон</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-viber"><i class="choose-not-click choose-viber fab fa-viber"></i> Viber</a>
+            <a href="javascript:void(0);" class="choose-not-click choose-telegram"><i class="choose-not-click choose-telegram fab fa-telegram-plane"></i> Telegram</a>
          </div>`;
          emailMask();
       }
@@ -181,7 +181,6 @@ window.addEventListener('click', (event) =>{
       chooser = document.querySelector('#chooser');
       chooseMenu = document.querySelector('.choose-content .choose-row');
       menuOpened = false;
-
       variant = document.querySelector('.variant');
    }
 });
@@ -199,7 +198,6 @@ function telMask(){
       });
    });
 }
-
 function viberMask(){
    variant.innerHTML = `<label for="tel">Введите телефон:</label>
    <input type="tel" name="tel" id="tel" placeholder="+38(___)___-__-__" maxlength="18" required>`;
@@ -211,7 +209,6 @@ function viberMask(){
       });
    });
 }
-
 function telegramMask(){
    variant.innerHTML = `<label for="tel">Введите Telegram Username:</label>
    <input type="text" name="tel" id="tel" placeholder="@Username" maxlength="18" required>`;
@@ -225,20 +222,14 @@ function telegramMask(){
          return input.target.value = '@' + input.target.value;
       }
       if(input.target.value[0].search(re2) > -1){
-         console.log('qwe');
          return input.target.value = '';
       }
-      
    });
-
 }
 function emailMask(){
    variant.innerHTML = `<label for="email">Введите E-Mail:</label>
    <input type="email" name="tel" id="tel" placeholder="Johnsnow@gmail.com" maxlength="18" required>`;
 }
-
-
-
 
 //TELEPHONE MASK (jq maskedinput)
 
@@ -250,9 +241,54 @@ jQuery(function ($){
    });
 });
 
+//form sending logic
 
+$('.questions-form').submit(function(event){
+   event.preventDefault();
 
+   let name = $('input[name="name"]').val().trim();
+   let howToConnect = $('#chooser').data(); // phone / viber / telegram / email
+   let howToConnectInfo = $('#tel').val().trim();
+   let somethingMore = $('#some').val().trim();
 
+   const collectedData = {
+      'name' : name,
+      'connectType' : howToConnect.value,
+      'connectData' : howToConnectInfo,
+      'someText' : somethingMore
+   }
+   console.log(collectedData);
+
+   $.ajax({
+      type: 'POST',
+      url: 'send.php',
+      cache: false,
+      data: collectedData,
+      dataType: 'html',
+      beforeSend: function(){
+         $('.questions-form button').prop('disabled', true);
+      },
+      success: function(response){
+         if(!response){
+            alert('что-то пошло не так, нет ответа от сервера.');
+         }
+         else{
+            $('.success-form-shadow').display = 'flex';
+            $('.questions-form button').prop('disabled', false);
+         }
+      }
+   });
+});
+
+//form success stuff
+
+let successFormAlert = document.querySelector('.success-form-shadow');
+
+window.addEventListener('click', (event) => {
+   if (event.target.classList.contains('success-form-shadow')){
+      successFormAlert.style.display = 'none';
+   }
+});
 
 
 
