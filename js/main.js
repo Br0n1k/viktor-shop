@@ -261,7 +261,7 @@ $('.questions-form').submit(function(event){
 
    $.ajax({
       type: 'POST',
-      url: 'send.php',
+      url: '../send.php',
       cache: false,
       data: collectedData,
       dataType: 'html',
@@ -269,12 +269,13 @@ $('.questions-form').submit(function(event){
          $('.questions-form button').prop('disabled', true);
       },
       success: function(response){
-         if(!response){
+         if(!response || response == false){
             alert('что-то пошло не так, нет ответа от сервера.');
          }
-         else{
-            $('.success-form-shadow').display = 'flex';
+         else if(response == true) {
+            $('.success-form-shadow').css('display', 'flex');
             $('.questions-form button').prop('disabled', false);
+            console.log('ALL OK!');
          }
       }
    });
