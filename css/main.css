@@ -165,8 +165,8 @@ textarea:focus, input:focus{
    border: 2px solid gray;
 }
 .item-cards .item-card > div{
-   margin-top: 12px;
-   margin-bottom: 12px;
+   margin-top: 14px;
+   margin-bottom: 14px;
 }
 .item-cards .item-card .card-line{
    min-height: 22px;
@@ -181,6 +181,12 @@ textarea:focus, input:focus{
    max-width: 300px;
    margin: 0 auto;
    display: block;
+}
+.item-cards .item-card .item-desc{
+   width: 80%;
+   margin: 0 auto;
+   padding-top: 6px;
+   padding-bottom: 6px;
 }
 .item-cards .item-card .item-price{
    float: left;
