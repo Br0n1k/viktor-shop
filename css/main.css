@@ -163,6 +163,7 @@ textarea:focus, input:focus{
    max-width: 400px;
    padding: 4px 12px;
    border: 2px solid gray;
+   position: relative;
 }
 .item-cards .item-card > div{
    margin-top: 14px;
@@ -171,7 +172,7 @@ textarea:focus, input:focus{
 .item-cards .item-card .card-line{
    min-height: 22px;
 }
-.item-cards .item-card .item-id{
+.item-cards .item-card .item-name{
    float: left;
 }
 .item-cards .item-card .item-time{
@@ -179,20 +180,25 @@ textarea:focus, input:focus{
 }
 .item-cards .item-card img{
    max-width: 300px;
+   max-height: 200px;
    margin: 0 auto;
    display: block;
 }
 .item-cards .item-card .item-desc{
-   width: 80%;
+   padding: 0 10px;
    margin: 0 auto;
    padding-top: 6px;
    padding-bottom: 6px;
 }
 .item-cards .item-card .item-price{
-   float: left;
+   position: absolute;
+   left: 12px;
+   bottom: 12px;
 }
 .item-cards .item-card .item-button{
-   float: right;
+   position: absolute;
+   bottom: 20px;
+   right: 12px;
 }
 .item-cards .item-card .item-button a{
    margin: 0 auto;
