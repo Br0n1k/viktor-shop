@@ -12,14 +12,14 @@
    <!-- NAVbar -->
    <div class="navbar">
       <div class="nav-inside">
+      <a href="#" class="mobile-menu-button"><i class="fas fa-caret-square-down"></i></a>
          <div class="nav-left">
-            <a href="index.html"><h2>Главная</h2></a>
-            <a href="#">Каталог</a>
-            <a href="#">О нас</a>
-            <a href="#">Контакты</a>
+            <a href="index.html" class="desktop-menu-link"><h2>Главная</h2></a>
+            <a href="catalog.php" class="desktop-menu-link opened-show">Каталог</a>
+            <a href="#" class="desktop-menu-link opened-show">О нас</a>
+            <a href="#" class="desktop-menu-link opened-show">Контакты</a>
          </div>
          <div class="nav-right">
-            
             <a href="#" class="cart-link"><i class="fas fa-shopping-cart"></i> Корзина</a>
          </div>
       </div>
@@ -67,7 +67,7 @@
          <h2>Популярные товары:</h2>
          <div class="item-cards">
    <?php require_once "admin/connect.php"; ?>
-   <?php $sql = "SELECT * FROM goods_favorite";
+   <?php $sql = "SELECT * FROM goods WHERE isfavorite IS NOT NULL";
          $result = mysqli_query($conn, $sql);
 
          while($row = mysqli_fetch_assoc($result)):
@@ -226,35 +226,10 @@
       <!-- form success END -->
    </div>
    <!-- wrapper END -->
+   
    <!-- footer -->
-   <div class="footer">
-      <div class="footer-inside">
-         <div class="footer-left">
-            <ul>
-               <li><a href="/catalog.html">Каталог</a></li>
-               <li><a href="/about.html">О нас</a></li>
-               <li><a href="/contacts.html">Контакты</a></li>
-               <li><a href="#">Корзина</a></li>
-            </ul>
-         </div>
-         <div class="footer-right">
-            <ul>
-               <li><a href="https://invite.viber.com/?g2=AQAasivCpxu2F0se8eaBd3UWuguC9lPZk66AnhGqiFfwpE3AjhniPW9hnHU1jqvf">Viber</a></li>
-               <li><a href="#">Instagram</a></li>
-               <li><a href="#">Facebook</a></li>
-               <li><a href="#">Vkontakte</a></li>
-            </ul>
-         </div>
-      </div>
-      <div class="footer-copyrights">
-         <p>©2021 All rights reserved.</p>
-      </div>
-   </div>
+   <?php require_once "footer.php";?>
    <!-- footer END -->
-
-
-
-
    <script src="js/jquery-3.6.0.min.js"></script>
    <script src="js/jquery.maskedinput.min.js"></script>
    <script src="js/main.js"></script>

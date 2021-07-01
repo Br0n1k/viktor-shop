@@ -1,10 +1,31 @@
 //NAVBAR
 
+//nav colors
 const cartLink = document.querySelector('.cart-link');
 const cartIcon = document.querySelector('.cart-link > i');
 
 cartLink.addEventListener('mouseover', () => cartIcon.style.color = "#f5a81b");
 cartLink.addEventListener('mouseout', () => cartIcon.style.color = "#f6f8fa");
+
+//nav mobile
+
+let navInside = document.querySelector('.nav-inside');
+let navLeft = document.querySelector('.nav-left');
+let navButton = document.querySelector('.mobile-menu-button');
+let opened = false;
+
+navButton.addEventListener('click', () => {
+   if(opened == false){
+      navInside.classList.add('opened');
+      navLeft.classList.add('opened');
+      opened = true;
+   }
+   else{
+      navInside.classList.remove('opened');
+      navLeft.classList.remove('opened');
+      opened = false;
+   }
+});
 
 //MAIN SLIDER
 
