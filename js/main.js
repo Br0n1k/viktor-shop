@@ -1,4 +1,4 @@
-//NAVBAR
+//NAVBAR ------------------------------------------------
 
 //nav colors
 const cartLink = document.querySelector('.cart-link');
@@ -27,7 +27,7 @@ navButton.addEventListener('click', () => {
    }
 });
 
-//MAIN SLIDER
+//MAIN SLIDER ------------------------------------------------
 
 let images = document.querySelectorAll('.slider .slider-line .slide img');
 const sliderLine = document.querySelector('.slider .slider-line');
@@ -138,7 +138,7 @@ function handleTouchMove(event){
    x1 = null;
 }
 
-//SENDING FORM
+//SENDING FORM ------------------------------------------------
 
 //choose menu
 let chooseContent = document.querySelector('.choose-content');
@@ -252,7 +252,7 @@ function emailMask(){
    <input type="email" name="tel" id="tel" placeholder="Johnsnow@gmail.com" maxlength="18" required>`;
 }
 
-//TELEPHONE MASK (jq maskedinput)
+//TELEPHONE MASK (jq maskedinput) ---------------------------------
 
 jQuery(function ($){
    $("input[name='tel']").mask("+38(999) 999-99-99",{autoclear: false}).on('click', function(){
@@ -312,5 +312,39 @@ window.addEventListener('click', (event) => {
    }
 });
 
+//CART ------------------------------------------------
+
+let cart = {}; //id + quantity in local storage
 
 
+
+
+function addToCart(value){
+   let id = value.dataset.id;
+
+   if(cart[id] == undefined){
+      cart[id] = 1;
+   }
+   else{
+      cart[id]++;
+   }
+   
+   let plusOneAnimation = value.parentNode.parentNode.children[1];
+   console.log(plusOneAnimation);
+
+   plusOneAnimation.style.display = 'block';
+   setTimeout(function(){
+      plusOneAnimation.style.display = 'none';
+   }, 300);
+   
+
+    
+   console.log(value);
+
+
+
+
+
+   console.log(cart);
+   localStorage.setItem('cart', JSON.stringify(cart));
+}

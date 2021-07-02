@@ -82,7 +82,8 @@
                   <div class="item-desc"><?php echo $row["description"]; ?></div>
                   <div class="card-line card-line-bottom">
                      <div class="item-price"><?php echo $row["cost"]; ?> грн.</div>
-                     <div class="item-button"><a href="#"<?php echo $row["id"]; ?>>В корзину</a></div>
+                     <div class="plus-one">+1</div>
+                     <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row["id"]; ?>"onclick=addToCart(this);>В корзину</a></div>
                   </div>
                </div>
             </div>
@@ -117,62 +118,27 @@
       <div class="section new">
          <h2>Новые поступления:</h2>
          <div class="item-cards">
-            <div class="card-wrap">
+         <?php 
+         $sql = "SELECT * FROM goods ORDER BY id DESC LIMIT 4";
+         $result = mysqli_query($conn, $sql);
+         while($row = mysqli_fetch_assoc($result)):
+         ?>
+         <div class="card-wrap">
                <div class="item-card">
                   <div class="card-line">
-                     <div class="item-id">12345</div>
-                     <div class="item-time">Под заказ, 4 дня</div>
+                     <div class="item-name"><?php echo $row["name"]; ?></div>
+                     <div class="item-time"><?php echo $row["ordertime"]; ?></div>
                   </div>
-                  <div class="item-img"><img src="/images/300x200.jpg" alt=""></div>
-                  <div class="item-desc">Бантик-фигантик из ртути с добавлением необедненного урана кек чебурек </div>
-                  <div class="card-line">
-                     <div class="item-price">550грн</div>
-                     <div class="item-button"><a href="#">В корзину</a></div>
+                  <div class="item-img"><img src="<?php echo $row["img"]; ?>" alt=""></div>
+                  <div class="item-desc"><?php echo $row["description"]; ?></div>
+                  <div class="card-line card-line-bottom">
+                     <div class="item-price"><?php echo $row["cost"]; ?> грн.</div>
+                     <div class="plus-one">+1</div>
+                     <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row["id"]; ?>"onclick=addToCart(this);>В корзину</a></div>
                   </div>
                </div>
             </div>
-            <div class="card-wrap">
-               <div class="item-card">
-                  <div class="card-line">
-                     <div class="item-id">12345</div>
-                     <div class="item-time">Под заказ, 4 дня</div>
-                  </div>
-                  <div class="item-img"><img src="/images/300x200.jpg" alt=""></div>
-                  <div class="item-desc">Бантик-фигантик из ртути с добавлением необедненного урана кек чебурек </div>
-                  <div class="card-line">
-                     <div class="item-price">550грн</div>
-                     <div class="item-button"><a href="#">В корзину</a></div>
-                  </div>
-               </div>
-            </div>
-            <div class="card-wrap">
-               <div class="item-card">
-                  <div class="card-line">
-                     <div class="item-id">12345</div>
-                     <div class="item-time">Под заказ, 4 дня</div>
-                  </div>
-                  <div class="item-img"><img src="/images/300x200.jpg" alt=""></div>
-                  <div class="item-desc">Бантик-фигантик из ртути с добавлением необедненного урана кек чебурек </div>
-                  <div class="card-line">
-                     <div class="item-price">550грн</div>
-                     <div class="item-button"><a href="#">В корзину</a></div>
-                  </div>
-               </div>
-            </div>
-            <div class="card-wrap">
-               <div class="item-card">
-                  <div class="card-line">
-                     <div class="item-id">12345</div>
-                     <div class="item-time">Под заказ, 4 дня</div>
-                  </div>
-                  <div class="item-img"><img src="/images/300x200.jpg" alt=""></div>
-                  <div class="item-desc">Бантик-фигантик из ртути с добавлением необедненного урана кек чебурек </div>
-                  <div class="card-line">
-                     <div class="item-price">550грн</div>
-                     <div class="item-button"><a href="#">В корзину</a></div>
-                  </div>
-               </div>
-            </div>
+         <?php endwhile; ?>
          </div>
       </div>
       <!-- new ones END -->
