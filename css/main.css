@@ -221,12 +221,19 @@ textarea:focus, input:focus{
    background-color: var(--darkblue);
 }
 .item-cards .item-card .plus-one{
-   display: none;
-   font-size: 24px;
+   display: block;
+   font-size: 26px;
    position: absolute;
    right: 110px;
    bottom: 14px;
-   animation: fadeInAndOut 0.3s;
+}
+.item-cards .item-card .plus-one p{
+   position: absolute;
+   animation: fadeInAndOut 0.7s;
+   top: -58px;
+   left: -32px;
+   opacity: 0;
+   color: var(--blue);
 }
 
 @keyframes fadeInAndOut {

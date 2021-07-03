@@ -82,8 +82,8 @@
                   <div class="item-desc"><?php echo $row["description"]; ?></div>
                   <div class="card-line card-line-bottom">
                      <div class="item-price"><?php echo $row["cost"]; ?> грн.</div>
-                     <div class="plus-one">+1</div>
-                     <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row["id"]; ?>"onclick=addToCart(this);>В корзину</a></div>
+                     <div class="plus-one"></div>
+                     <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row["id"]; ?>" onclick=addToCart(this);>В корзину</a></div>
                   </div>
                </div>
             </div>
@@ -133,8 +133,8 @@
                   <div class="item-desc"><?php echo $row["description"]; ?></div>
                   <div class="card-line card-line-bottom">
                      <div class="item-price"><?php echo $row["cost"]; ?> грн.</div>
-                     <div class="plus-one">+1</div>
-                     <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row["id"]; ?>"onclick=addToCart(this);>В корзину</a></div>
+                     <div class="plus-one"></div>
+                     <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row["id"]; ?>" onclick=addToCart(this);>В корзину</a></div>
                   </div>
                </div>
             </div>

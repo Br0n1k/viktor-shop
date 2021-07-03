@@ -330,21 +330,15 @@ function addToCart(value){
    }
    
    let plusOneAnimation = value.parentNode.parentNode.children[1];
-   console.log(plusOneAnimation);
-
-   plusOneAnimation.style.display = 'block';
-   setTimeout(function(){
-      plusOneAnimation.style.display = 'none';
-   }, 300);
+   let plusOne = document.createElement('p');
    
+   plusOne.innerHTML = "+1";
+   plusOneAnimation.appendChild(plusOne);
 
-    
-   console.log(value);
-
-
-
-
-
+   setTimeout(function(){
+      plusOne.remove();
+   }, 800);
+   
    console.log(cart);
    localStorage.setItem('cart', JSON.stringify(cart));
 }
