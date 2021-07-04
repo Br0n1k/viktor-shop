@@ -32,11 +32,6 @@ textarea:focus, input:focus{
  }
 
 
-
-
-
-
- 
 /* main styles */
 
 .navbar i{
@@ -84,6 +79,7 @@ textarea:focus, input:focus{
    max-width: 1920px;
    margin: 0 auto;
 }
+
 
 /* SLIDER */
 
@@ -141,6 +137,7 @@ textarea:focus, input:focus{
    background-color: var(--darkblue);
 }
 
+
 /* POPULAR and NEW */
 
 .section{
@@ -163,10 +160,13 @@ textarea:focus, input:focus{
    margin: 40px 10px 0;
 }
 .item-cards .item-card{
-   max-width: 400px;
+   width: 98%;
+   max-width: 390px;
    padding: 4px 12px;
    border: 2px solid gray;
    position: relative;
+   margin-left: auto;
+   margin-right: auto;
 }
 .item-cards .item-card > div{
    margin-top: 14px;
@@ -182,13 +182,14 @@ textarea:focus, input:focus{
    float: right;
 }
 .item-cards .item-card img{
-   max-width: 300px;
-   max-height: 200px;
+   width: 300px;
+   height: 200px;
    margin: 0 auto;
    display: block;
+   object-fit: cover;
 }
 .item-cards .item-card .item-desc{
-   padding: 0 10px;
+   padding: 0 20px;
    margin: 0 auto;
    padding-top: 6px;
    padding-bottom: 6px;
@@ -238,8 +239,10 @@ textarea:focus, input:focus{
 
 @keyframes fadeInAndOut {
     0%   { opacity: 1; }
-    100% { opacity: 0; }
+    20%   { opacity: 1; }
+    100% { opacity: 0; top: -68px;}
 }
+
 
 /* INFO */
 
@@ -283,6 +286,7 @@ textarea:focus, input:focus{
    text-align: center;
    margin-left: calc(50% - 90px);
 }
+
 
 /* QUESTIONS FORM */
 
@@ -399,6 +403,7 @@ textarea:focus, input:focus{
    cursor: pointer;
 }
 
+
 /* SUCCESS FORM */
 
 .success-form-shadow{
@@ -431,12 +436,6 @@ textarea:focus, input:focus{
    font-size: 40px;
    color: #464646;
 }
-
-
-
-
-
-
 
 
 /* FOOTER */
@@ -526,10 +525,10 @@ textarea:focus, input:focus{
    .navbar .nav-inside{
       position: relative;
       height: 24px;
-      -webkit-transition: all 0.2s ease;
-      -moz-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      transition: all 0.2s ease;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
    }
    .navbar .desktop-menu-link{
       display: none;
@@ -590,27 +589,90 @@ textarea:focus, input:focus{
       margin-bottom: 20px;
    }
 }
-@media screen and (min-width:660px) and (max-width:900px){
-   .item-cards{
-      flex-wrap: wrap;
-   }
-}
-@media screen and (min-width:770px) and (max-width:900px){
+@media screen and (min-width:370px) and (max-width:769px){
    .item-cards{
       flex-wrap: wrap;
    }
    .item-cards .card-wrap{
-      width: 45%;
+      width: 95%;
    }
+   
 }
 @media screen and (min-width:1200px){
    .nav-inside{
       max-width: 80%;
    }
 }
-@media screen and (min-width:1300px) and (max-width:1800px){
+@media screen and (min-width:370px) and (max-width:500px){
+   .item-cards .item-card{
+      min-width: 90%;
+   }
+}
+@media screen and (min-width:501px) and (max-width:769px){
+   .item-cards .item-card{
+      min-width: 400px;
+   }
+}
+@media screen and (min-width:770px) and (max-width:1399px){
+   .item-cards .card-wrap{
+      width: 48%;
+      padding: 0;
+      margin: 20px 0;
+   }
+   .item-cards .item-card{
+      margin-left: auto;
+      margin-right: auto;
+      width: 99%;
+   }
+   .item-cards.cards-catalog{
+      justify-content: flex-start;
+      margin-left: auto;
+      margin-right: auto;
+   }
+   .item-cards.cards-catalog .card-wrap{
+      flex-basis: 50%;
+      margin-left: 0;
+      margin-right: 0;
+   }
+   .item-cards.cards-catalog .item-card{
+      margin-left: auto;
+      margin-right: auto;
+      width: 88%;
+   }
+}
+@media screen and (min-width:970px) and (max-width:1399px){
+   .item-cards .card-wrap{
+      width: 40%;
+   }
+   .item-cards.cards-catalog{
+      width: 80%;
+   }
+}
+@media screen and (min-width:1150px) and (max-width:1399px){
+   .item-cards{
+      justify-content: center;
+   }
+}
+@media screen and (min-width:1400px){
    .item-cards{
       flex-wrap: nowrap;
+   }
+   .item-cards .card-wrap{
+      flex-basis: 24%;
+   }
+   .item-cards.cards-catalog{
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-left: auto;
+      margin-right: auto;
+   }
+   .item-cards.cards-catalog .card-wrap{
+      flex-basis: 25%;
+      margin-left: 0;
+      margin-right: 0;
+   }
+   .item-cards.cards-catalog .item-card{
+      width: 88%;
    }
 }
 @media screen and (min-width:1600px){

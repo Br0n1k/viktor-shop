@@ -12,15 +12,15 @@
    <!-- NAVbar -->
    <div class="navbar">
       <div class="nav-inside">
-      <a href="#" class="mobile-menu-button"><i class="fas fa-caret-square-down"></i></a>
+      <a href="javascript:void(0);" class="mobile-menu-button"><i class="fas fa-caret-square-down"></i></a>
          <div class="nav-left">
-            <a href="index.html" class="desktop-menu-link"><h2>Главная</h2></a>
+            <a href="index.php" class="desktop-menu-link"><h2>Главная</h2></a>
             <a href="catalog.php" class="desktop-menu-link opened-show">Каталог</a>
-            <a href="#" class="desktop-menu-link opened-show">О нас</a>
-            <a href="#" class="desktop-menu-link opened-show">Контакты</a>
+            <a href="about.php" class="desktop-menu-link opened-show">О нас</a>
+            <a href="contacts.php" class="desktop-menu-link opened-show">Контакты</a>
          </div>
          <div class="nav-right">
-            <a href="#" class="cart-link"><i class="fas fa-shopping-cart"></i> Корзина</a>
+            <a href="cart.php" class="cart-link"><i class="fas fa-shopping-cart"></i> Корзина</a>
          </div>
       </div>
    </div>
@@ -66,13 +66,13 @@
       <div class="section popular">
          <h2>Популярные товары:</h2>
          <div class="item-cards">
-   <?php require_once "admin/connect.php"; ?>
+   <?php require_once "connect.php"; ?>
    <?php $sql = "SELECT * FROM goods WHERE isfavorite IS NOT NULL";
          $result = mysqli_query($conn, $sql);
 
          while($row = mysqli_fetch_assoc($result)):
    ?>
-         <div class="card-wrap">
+            <div class="card-wrap">
                <div class="item-card">
                   <div class="card-line">
                      <div class="item-name"><?php echo $row["name"]; ?></div>
@@ -109,7 +109,7 @@
                   <li><i class="fas fa-check"></i><span>Сделано с любовью</span></li>
                </ul>
                <h4>Переходите в каталог, заказывайте и убедитесь лично!</h4><br>
-               <a href="#" class="slider-catalog-button">Перейти в каталог</a>
+               <a href="catalog.php" class="slider-catalog-button">Перейти в каталог</a>
             </div>
          </div>
       </div>
@@ -123,7 +123,7 @@
          $result = mysqli_query($conn, $sql);
          while($row = mysqli_fetch_assoc($result)):
          ?>
-         <div class="card-wrap">
+            <div class="card-wrap">
                <div class="item-card">
                   <div class="card-line">
                      <div class="item-name"><?php echo $row["name"]; ?></div>
@@ -138,7 +138,9 @@
                   </div>
                </div>
             </div>
-         <?php endwhile; ?>
+         <?php endwhile; 
+         mysqli_close($conn);
+         ?>
          </div>
       </div>
       <!-- new ones END -->
@@ -199,5 +201,6 @@
    <script src="js/jquery-3.6.0.min.js"></script>
    <script src="js/jquery.maskedinput.min.js"></script>
    <script src="js/main.js"></script>
+   <script src="js/slider.js"></script>
 </body>
 </html>
