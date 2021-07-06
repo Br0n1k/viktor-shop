@@ -37,30 +37,46 @@
           $cat_arr_ru_name[] = $row_cat["ru_name"];
           $cat_arr_description[] = $row_cat["description"];
       }
+      ?>
 
-         for($i = 0; $i < count($cat_arr_name); $i++){
+
+         <?php for($i = 0; $i < count($cat_arr_name); $i++): 
             $sql_cat_out = "SELECT * FROM goods WHERE category = '$cat_arr_name[$i]'";
             $result_cat_out = mysqli_query($conn, $sql_cat_out);
-
-            echo $cat_arr_ru_name[$i] . "<br>";
-            echo $cat_arr_description[$i] . "<br>";
-
-            while($row_cat_out = mysqli_fetch_assoc($result_cat_out)){
-               echo $row_cat_out["name"] . "<br>";
-               
-               
-            }
-
+            //section here
+         ?>
+            <div class="section">
+               <h2><?php echo $cat_arr_ru_name[$i]; ?></h2>
+               <h3><?php echo $cat_arr_description[$i]; ?></h3>
+               <div class="item-cards cards-catalog">
+            
+            
 
 
-         }
+            <?php while($row_cat_out = mysqli_fetch_assoc($result_cat_out)): 
+               //goods here
+            ?>
+               <div class="card-wrap">
+                  <div class="item-card">
+                     <div class="card-line">
+                        <div class="item-name"><?php echo $row_cat_out["name"]; ?></div>
+                        <div class="item-time"><?php echo $row_cat_out["ordertime"]; ?></div>
+                     </div>
+                     <div class="item-img"><img src="<?php echo $row_cat_out["img"]; ?>" alt=""></div>
+                     <div class="item-desc"><?php echo $row_cat_out["description"]; ?></div>
+                     <div class="card-line card-line-bottom">
+                        <div class="item-price"><?php echo $row_cat_out["cost"]; ?> грн.</div>
+                        <div class="plus-one"></div>
+                        <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row_cat_out["id"]; ?>" onclick=addToCart(this);>В корзину</a></div>
+                     </div>
+                  </div>
+               </div>
 
+            <?php endwhile; ?>
 
-
-         
-
-
-      ?>
+               </div>
+            </div>
+         <?php endfor; ?>
 
 
 
@@ -72,7 +88,7 @@
 
 
    <!-- footer -->
-   <?php// require_once "footer.php";?>
+   <?php require_once "footer.php";?>
    <!-- footer END -->
    
    <script src="js/jquery-3.6.0.min.js"></script>

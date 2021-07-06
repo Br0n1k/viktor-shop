@@ -150,6 +150,9 @@ textarea:focus, input:focus{
    margin-bottom: 10px;
    text-align: center;
 }
+.section h3{
+   text-align: center;
+}
 .item-cards{
    display: flex;
    flex-wrap: wrap;
@@ -474,6 +477,9 @@ textarea:focus, input:focus{
 .footer .footer-inside li a:hover{
    color: var(--orange);
 }
+.footer .footer-inside .footer-right li a:hover{
+   color: var(--light);
+}
 .footer .footer-copyrights{
    text-align: center;
 }
@@ -483,7 +489,12 @@ textarea:focus, input:focus{
    padding: 10px 0;
    font-size: 12px;
 }
-
+.footer i{
+   -webkit-transition: all 0.2s ease;;
+   -moz-transition: all 0.2s ease;;
+   -o-transition: all 0.2s ease;;
+   transition: all 0.2s ease;
+}
 
 
 

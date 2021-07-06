@@ -10,10 +10,10 @@
       </div>
       <div class="footer-right">
          <ul>
-            <li><a href="https://invite.viber.com/?g2=AQAasivCpxu2F0se8eaBd3UWuguC9lPZk66AnhGqiFfwpE3AjhniPW9hnHU1jqvf"><i class="fab fa-viber"></i>Viber</a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i>Instagram</a></li>
-            <li><a href="#"><i class="fab fa-facebook-f"></i>Facebook</a></li>
-            <li><a href="#"><i class="fab fa-vk"></i>Vkontakte</a></li>
+            <li><a href="https://invite.viber.com/?g2=AQAasivCpxu2F0se8eaBd3UWuguC9lPZk66AnhGqiFfwpE3AjhniPW9hnHU1jqvf" class="vb-link"><i class="fab fa-viber"></i>Viber</a></li>
+            <li><a href="#" class="inst-link"><i class="fab fa-instagram"></i>Instagram</a></li>
+            <li><a href="#" class="fb-link"><i class="fab fa-facebook-f"></i>Facebook</a></li>
+            <li><a href="#" class="vk-link"><i class="fab fa-vk"></i>Vkontakte</a></li>
          </ul>
       </div>
    </div>

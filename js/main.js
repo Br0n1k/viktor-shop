@@ -202,6 +202,31 @@ window.addEventListener('click', (event) => {
    }
 });
 
+
+//FOOTER ------------------------------------------------
+
+//footer colors
+const vbLink = document.querySelector('.vb-link');
+const vbIcon = document.querySelector('.vb-link > i');
+const instLink = document.querySelector('.inst-link');
+const instIcon = document.querySelector('.inst-link > i');
+const vkLink = document.querySelector('.vk-link');
+const vkIcon = document.querySelector('.vk-link > i');
+const fbLink = document.querySelector('.fb-link');
+const fbIcon = document.querySelector('.fb-link > i');
+
+vbLink.addEventListener('mouseover', () => vbIcon.style.color = "#a156dc");
+vbLink.addEventListener('mouseout', () => vbIcon.style.color = "#f6f8fa");
+instLink.addEventListener('mouseover', () => instIcon.style.color = "#fd8911");
+instLink.addEventListener('mouseout', () => instIcon.style.color = "#f6f8fa");
+vkLink.addEventListener('mouseover', () => vkIcon.style.color = "#3776EA");
+vkLink.addEventListener('mouseout', () => vkIcon.style.color = "#f6f8fa");
+fbLink.addEventListener('mouseover', () => fbIcon.style.color = "#3776EA");
+fbLink.addEventListener('mouseout', () => fbIcon.style.color = "#f6f8fa");
+
+
+
+
 //CART ------------------------------------------------
 
 let cart = {}; //id + quantity in local storage
