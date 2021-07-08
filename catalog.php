@@ -57,10 +57,14 @@
                <div class="card-wrap">
                   <div class="item-card">
                      <div class="card-line">
-                        <div class="item-name"><?php echo $row_cat_out["name"]; ?></div>
+                        <div class="item-name">
+                              <a href="item.php?item=<?php echo $row_cat_out["id"]; ?>"><b><?php echo $row_cat_out["name"]; ?></b></a>
+                        </div>
                         <div class="item-time"><?php echo $row_cat_out["ordertime"]; ?></div>
                      </div>
-                     <div class="item-img"><img src="<?php echo $row_cat_out["img"]; ?>" alt=""></div>
+                     <div class="item-img">
+                        <a href="item.php?item=<?php echo $row_cat_out["id"]; ?>"><img src="<?php echo $row_cat_out["img"]; ?>" alt=""></a>
+                     </div>
                      <div class="item-desc"><?php echo $row_cat_out["description"]; ?></div>
                      <div class="card-line card-line-bottom">
                         <div class="item-price"><?php echo $row_cat_out["cost"]; ?> грн.</div>

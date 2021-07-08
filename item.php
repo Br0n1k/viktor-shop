@@ -39,8 +39,7 @@
          ?>
          <?php 
             while($row = mysqli_fetch_assoc($result)): ?>
-            <div class="item-cards">
-            <div class="card-wrap">
+            
                <div class="item-card">
                   <div class="card-line">
                   <div class="item-name">
@@ -58,8 +57,7 @@
                      <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row["id"]; ?>" onclick=addToCart(this);>В корзину</a></div>
                   </div>
                </div>
-            </div>
-         </div>
+               
          <?php endwhile; 
                mysqli_close($conn);
          ?>

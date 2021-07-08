@@ -214,12 +214,12 @@ textarea:focus, input:focus{
    left: 12px;
    bottom: 12px;
 }
-.item-cards .item-card .item-button{
+.item-card .item-button{
    position: absolute;
    bottom: 20px;
    right: 12px;
 }
-.item-cards .item-card .item-button a{
+.item-card .item-button a{
    margin: 0 auto;
    background-color: var(--blue);
    border: none;
@@ -232,7 +232,7 @@ textarea:focus, input:focus{
    -o-transition: all 0.2s ease;
    transition: all 0.2s ease;
 }
-.item-cards .item-card .item-button a:hover{
+.item-card .item-button a:hover{
    color: var(--orange);
    background-color: var(--darkblue);
 }
@@ -520,6 +520,15 @@ textarea:focus, input:focus{
    -o-transition: all 0.2s ease;;
    transition: all 0.2s ease;
 }
+
+
+/* ITEM PAGE */
+
+
+
+
+
+
 
 
 

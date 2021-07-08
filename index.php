@@ -130,8 +130,8 @@
             <div class="card-wrap">
                <div class="item-card">
                   <div class="card-line">
-                  <div class="item-name">
-                        <a href="item.php?item=<?php echo $row["id"]; ?>"><b><?php echo $row["name"]; ?></b></a>
+                     <div class="item-name">
+                           <a href="item.php?item=<?php echo $row["id"]; ?>"><b><?php echo $row["name"]; ?></b></a>
                      </div>
                      <div class="item-time"><?php echo $row["ordertime"]; ?></div>
                   </div>
