@@ -50,12 +50,10 @@
                <h3><?php echo $cat_arr_description[$i]; ?></h3>
                <div class="item-cards cards-catalog">
             
-            
-
-
             <?php while($row_cat_out = mysqli_fetch_assoc($result_cat_out)): 
                //goods here
             ?>
+
                <div class="card-wrap">
                   <div class="item-card">
                      <div class="card-line">
@@ -82,11 +80,10 @@
 
 
 
+
+
    </div>
    <!-- wrapper END -->
-
-
-
    <!-- footer -->
    <?php require_once "footer.php";?>
    <!-- footer END -->

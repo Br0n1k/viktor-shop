@@ -75,10 +75,14 @@
             <div class="card-wrap">
                <div class="item-card">
                   <div class="card-line">
-                     <div class="item-name"><?php echo $row["name"]; ?></div>
+                     <div class="item-name">
+                        <a href="item.php?item=<?php echo $row["id"]; ?>"><b><?php echo $row["name"]; ?></b></a>
+                     </div>
                      <div class="item-time"><?php echo $row["ordertime"]; ?></div>
                   </div>
-                  <div class="item-img"><img src="<?php echo $row["img"]; ?>" alt=""></div>
+                  <div class="item-img">
+                     <a href="item.php?item=<?php echo $row["id"]; ?>"><img src="<?php echo $row["img"]; ?>" alt=""></a>
+                  </div>
                   <div class="item-desc"><?php echo $row["description"]; ?></div>
                   <div class="card-line card-line-bottom">
                      <div class="item-price"><?php echo $row["cost"]; ?> грн.</div>
@@ -126,10 +130,14 @@
             <div class="card-wrap">
                <div class="item-card">
                   <div class="card-line">
-                     <div class="item-name"><?php echo $row["name"]; ?></div>
+                  <div class="item-name">
+                        <a href="item.php?item=<?php echo $row["id"]; ?>"><b><?php echo $row["name"]; ?></b></a>
+                     </div>
                      <div class="item-time"><?php echo $row["ordertime"]; ?></div>
                   </div>
-                  <div class="item-img"><img src="<?php echo $row["img"]; ?>" alt=""></div>
+                  <div class="item-img">
+                     <a href="item.php?item=<?php echo $row["id"]; ?>"><img src="<?php echo $row["img"]; ?>" alt=""></a>
+                  </div>
                   <div class="item-desc"><?php echo $row["description"]; ?></div>
                   <div class="card-line card-line-bottom">
                      <div class="item-price"><?php echo $row["cost"]; ?> грн.</div>
