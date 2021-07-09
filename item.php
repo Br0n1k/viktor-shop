@@ -26,7 +26,7 @@
    </div>
    <!-- NAVbar END -->
    <!-- wrapper -->
-   <div class="wrapper">
+   <div class="wrapper item-wrapper">
       <div class="section item">
          <?php require_once "connect.php"; ?>
          <?php
@@ -42,17 +42,32 @@
             
                <div class="item-card">
                   <div class="card-line">
-                  <div class="item-name">
-                        <a href="item.php?item=<?php echo $row["id"]; ?>"><b><?php echo $row["name"]; ?></b></a>
+                     <div class="item-name">
+                        <h2><?php echo $row["name"]; ?></h2>
+                     </div><br>
+                     <div class="item-time"><h4>Наличие товара: <?php echo $row["ordertime"]; ?></h4>
                      </div>
-                     <div class="item-time"><?php echo $row["ordertime"]; ?></div>
                   </div>
-                  <div class="item-img">
-                     <a href="item.php?item=<?php echo $row["id"]; ?>"><img src="<?php echo $row["img"]; ?>" alt=""></a>
-                  </div>
-                  <div class="item-desc"><?php echo $row["description"]; ?></div>
+                  <div class="img-preview">
+                     <div class="imgs">
+                        <img src="<?php echo $row["img"]; ?>" alt="">
+                        <img src="<?php echo $row["img1"]; ?>" alt="">
+                        <img src="<?php echo $row["img2"]; ?>" alt="">
+                        <img src="<?php echo $row["img3"]; ?>" alt="">
+                        <img src="<?php echo $row["img4"]; ?>" alt="">
+                     </div>
+                     <div class="big-img">
+                        <img src="<?php echo $row["img"]; ?>" alt="">
+                     </div>
+                  </div> 
+                  <div class="item-desc">
+                     <h4>Описание товара:</h4>
+                     <?php echo $row["description"]; ?>
+                  </div><br>
                   <div class="card-line card-line-bottom">
-                     <div class="item-price"><?php echo $row["cost"]; ?> грн.</div>
+                     <div class="item-price">
+                        <h4>Цена: <?php echo $row["cost"]; ?> грн. </h4><br>
+                     </div>
                      <div class="plus-one"></div>
                      <div class="item-button"><a href="javascript:void(0);" data-id="<?php echo $row["id"]; ?>" onclick=addToCart(this);>В корзину</a></div>
                   </div>
@@ -61,27 +76,19 @@
          <?php endwhile; 
                mysqli_close($conn);
          ?>
-
-
-
-
       </div>
 
-
-
-
-
-
-
-
+      <!-- questions -->
+      <?php require_once "questions.php";?>
+      <!-- questions END -->
    </div>
    <!-- wrapper END -->
    <!-- footer -->
    <?php require_once "footer.php";?>
    <!-- footer END -->
-   
    <script src="js/jquery-3.6.0.min.js"></script>
    <script src="js/jquery.maskedinput.min.js"></script>
    <script src="js/main.js"></script>
+   <script src="js/itempage.js"></script>
 </body>
 </html>

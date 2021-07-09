@@ -39,7 +39,6 @@
       }
       ?>
 
-
          <?php for($i = 0; $i < count($cat_arr_name); $i++): 
             $sql_cat_out = "SELECT * FROM goods WHERE category = '$cat_arr_name[$i]'";
             $result_cat_out = mysqli_query($conn, $sql_cat_out);
@@ -53,7 +52,6 @@
             <?php while($row_cat_out = mysqli_fetch_assoc($result_cat_out)): 
                //goods here
             ?>
-
                <div class="card-wrap">
                   <div class="item-card">
                      <div class="card-line">
@@ -82,10 +80,9 @@
 
 
 
-
-
-
-
+      <!-- questions -->
+      <?php require_once "questions.php";?>
+      <!-- questions END -->
    </div>
    <!-- wrapper END -->
    <!-- footer -->

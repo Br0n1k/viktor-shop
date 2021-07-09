@@ -524,11 +524,63 @@ textarea:focus, input:focus{
 
 /* ITEM PAGE */
 
-
-
-
-
-
+.item-wrapper{
+   background-color: var(--light);
+   width: 100%;
+   max-width: 100%;
+}
+.questions{
+   background-color: #d3e2f1;
+}
+.item h4{
+   font-size: 20px;
+}
+.item .big-img img{
+   max-width: 100%;
+   object-fit: cover;
+}
+.item .imgs img{
+   max-width: 190px;
+   margin-bottom: 4px;
+   cursor: pointer;
+}
+.item .img-preview{
+   display: flex;
+   margin-top: 40px;
+   margin-bottom: 40px;
+}
+.item .imgs{
+   display: flex;
+   flex-direction: column;
+   margin-right: 10px;
+}
+.item .item-button{
+   display: block;
+   position: relative;
+   bottom: 0;
+   right: 0;
+}
+.item .item-button a{
+   position: relative;
+}
+.item .card-line-bottom{
+   position: relative;
+}
+.item .plus-one{
+   display: block;
+   font-size: 26px;
+   position: absolute;
+   left: 134px;
+   bottom: -8px;
+}
+.item .plus-one p{
+   position: absolute;
+   animation: fadeInAndOut 0.7s;
+   top: -58px;
+   left: -32px;
+   opacity: 0;
+   color: var(--blue);
+}
 
 
 
@@ -647,6 +699,15 @@ textarea:focus, input:focus{
    .nav-inside{
       max-width: 80%;
    }
+   .item{
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+   }
+   .item .imgs img{
+      max-width: 144px;
+      margin-bottom: 4px;
+   }
 }
 @media screen and (min-width:370px) and (max-width:500px){
    .item-cards .item-card{
@@ -718,6 +779,19 @@ textarea:focus, input:focus{
    }
    .item-cards.cards-catalog .item-card{
       width: 88%;
+   }
+   .item{
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+   }
+   .item .big-img img{
+      height: auto;
+   }
+   .item .imgs img{
+      max-width: 194px;
+      max-height: 122px;
+      margin-bottom: 4px;
    }
 }
 @media screen and (min-width:1600px){
