@@ -1,3 +1,10 @@
+<?php
+   session_start();
+
+   if($_SESSION['is_admin'] != 1){
+      header('Location: login.php');
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +20,10 @@
          <a href="/admin/index.php">Элементы сайта</a>
          <a href="/admin/goods.php">Редактировать Товары</a>
          <a href="/admin/add.php" class="active">Добавить Товар</a>
+      </div>
+      <div class="nav-inside">
+         <h4><?php echo $_SESSION['username']; ?></h4>
+         <a class="fl-right" href="/admin/logout.php">Выйти</a>
       </div>
    </div>   
    <div class="goods-out">

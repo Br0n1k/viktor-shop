@@ -1,10 +1,17 @@
+<?php
+   session_start();
+
+   if($_SESSION['is_admin'] != 1){
+      header('Location: login.php');
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>admin panel</title>
+   <title>Admin panel</title>
    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
@@ -13,6 +20,10 @@
          <a href="/admin/index.php" class="active">Элементы сайта</a>
          <a href="/admin/goods.php">Редактировать Товары</a>
          <a href="/admin/add.php">Добавить Товар</a>
+      </div>
+      <div class="nav-inside">
+         <h4><?php echo $_SESSION['username']; ?></h4>
+         <a class="fl-right" href="/admin/logout.php">Выйти</a>
       </div>
    </div>
 
