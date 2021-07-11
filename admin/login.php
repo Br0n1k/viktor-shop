@@ -11,11 +11,8 @@
 <body>
    <?php
       if($_SESSION['is_admin'] == 1){
-         header('Location: index.php');
+         header('Location: /index.php');
       }
-      // else{
-      //    require_once "../connect.php";
-      // }
    ?>
       <div class="login-wrapper">
          <div class="login-window">

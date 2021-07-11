@@ -142,7 +142,7 @@ function emailMask(){
    <input type="email" name="tel" id="tel" placeholder="Johnsnow@gmail.com" maxlength="18" required>`;
 }
 
-//TELEPHONE MASK (jq maskedinput) ---------------------------------
+//TELEPHONE MASK (jq maskedinput)
 
 jQuery(function ($){
    $("input[name='tel']").mask("+38(999) 999-99-99",{autoclear: false}).on('click', function(){
@@ -182,6 +182,7 @@ $('.questions-form').submit(function(event){
       success: function(response){
          if(!response || response == false){
             alert('что-то пошло не так, нет ответа от сервера.');
+            $('.questions-form button').prop('disabled', false);
          }
          else if(response == true) {
             $('.success-form-shadow').css('display', 'flex');
@@ -231,9 +232,17 @@ fbLink.addEventListener('mouseout', () => fbIcon.style.color = "#f6f8fa");
 
 let cart = {}; //id + quantity in local storage
 
+//local storage stuff
+function loadFromStorage(){
+   if(localStorage.getItem('cart') != undefined){
+      cart = JSON.parse(localStorage.getItem('cart'));
+   }
+}
+
+loadFromStorage();
 
 
-
+//cart logic
 function addToCart(value){
    let id = value.dataset.id;
 
@@ -257,3 +266,4 @@ function addToCart(value){
    console.log(cart);
    localStorage.setItem('cart', JSON.stringify(cart));
 }
+
