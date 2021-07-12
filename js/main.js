@@ -154,7 +154,7 @@ jQuery(function ($){
 
 //form sending logic
 
-$('.questions-form').submit(function(event){
+$('.questions-form.pages').submit(function(event){
    event.preventDefault();
 
    let name = $('input[name="name"]').val().trim();

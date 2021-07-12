@@ -3,7 +3,7 @@
          <div class="questions-wrap">
             <h2>Не знаете что выбрать или просто нескем пообщаться?</h2>
             <div class="questions-inside">
-               <form class="questions-form" method="POST">
+               <form class="questions-form pages" method="POST">
                   <h4>Заполните форму и мы с Вами свяжемся!</h4>
                   <label for="name">Ваше имя</label>
                   <input type="text" name="name" id="name" placeholder="Джон Снег" required><br>
