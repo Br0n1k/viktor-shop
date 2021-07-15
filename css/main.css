@@ -172,7 +172,7 @@ textarea:focus, input:focus{
    width: 98%;
    max-width: 390px;
    padding: 4px 12px;
-   border: 2px solid gray;
+   border: 1px solid gray;
    position: relative;
    margin-left: auto;
    margin-right: auto;
@@ -535,8 +535,11 @@ textarea:focus, input:focus{
    width: 100%;
    max-width: 100%;
 }
+.item{
+   background-color: white;
+}
 .questions{
-   background-color: #d3e2f1;
+   padding-bottom: 0;
 }
 .item h4{
    font-size: 20px;
@@ -591,6 +594,10 @@ textarea:focus, input:focus{
 
 /* CART PAGE */
 
+.cart-wrapper{
+   background-color: var(--light);
+   padding: 40px 20px;
+}
 .cart-table{
    display: flex;
    justify-content: center;
@@ -823,6 +830,7 @@ textarea:focus, input:focus{
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
+      padding: 40px 20px;
    }
    .item .big-img img{
       height: auto;

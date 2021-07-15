@@ -30,7 +30,7 @@
       <h2>Ваши товары:</h2>
       <div class="section">
          <div class="cart-table">
-            <div class="cart-out"></div><br>
+            <div class="cart-out"></div><br><br>
             <div class="cart-sum-out"></div>
          </div>
          
