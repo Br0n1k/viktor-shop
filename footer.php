@@ -5,15 +5,15 @@
             <li><a href="/catalog.php">Каталог</a></li>
             <li><a href="/about.html">О нас</a></li>
             <li><a href="/contacts.html">Контакты</a></li>
-            <li><a href="#">Корзина</a></li>
+            <li><a href="/cart.php">Корзина</a></li>
          </ul>
       </div>
       <div class="footer-right">
          <ul>
-            <li><a href="https://invite.viber.com/?g2=AQAasivCpxu2F0se8eaBd3UWuguC9lPZk66AnhGqiFfwpE3AjhniPW9hnHU1jqvf" class="vb-link"><i class="fab fa-viber"></i>Viber</a></li>
-            <li><a href="#" class="inst-link"><i class="fab fa-instagram"></i>Instagram</a></li>
-            <li><a href="#" class="fb-link"><i class="fab fa-facebook-f"></i>Facebook</a></li>
-            <li><a href="#" class="vk-link"><i class="fab fa-vk"></i>Vkontakte</a></li>
+            <li><a href="<?php echo $vars["viber_link"]; ?>" class="vb-link"><i class="fab fa-viber"></i>Viber</a></li>
+            <li><a href="<?php echo $vars["Instagram_link"]; ?>" class="inst-link"><i class="fab fa-instagram"></i>Instagram</a></li>
+            <li><a href="<?php echo $vars["facebook_link"]; ?>" class="fb-link"><i class="fab fa-facebook-f"></i>Facebook</a></li>
+            <li><a href="<?php echo $vars["vkontakte_link"]; ?>" class="vk-link"><i class="fab fa-vk"></i>Vkontakte</a></li>
          </ul>
       </div>
    </div>
@@ -21,3 +21,4 @@
       <p>©<?php echo date("Y"); ?> All rights reserved.</p>
    </div>
 </div>
+<?php mysqli_close($conn); ?>

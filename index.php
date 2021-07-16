@@ -1,3 +1,13 @@
+<?php require_once "connect.php"; 
+      $sql_from_vars = "SELECT * FROM variables";
+      $variables = mysqli_query($conn, $sql_from_vars);
+
+      $vars = [];
+
+      while($var = mysqli_fetch_assoc($variables)){
+         $vars[$var["title"]] = $var["value"];
+      }
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -26,32 +36,31 @@
    </div>
    <!-- NAVbar END -->
    <!-- wrapper -->
-   <div class="wrapper">
+   <div class="wrapper main-wrapper">
       <!-- Main-slider -->
       <div class="slider">
          <div class="slider-line">
             <div class="slide slide-1">
                <img src="/images/slider-full/1.jpg" alt="">
                <div class="slider-absolute">
-                  <h1>Бантики-фигантики</h1>
-                  <h4>Налетай торопись топ бантики ЕУ</h4><br><br> 
+                  <h1><?php echo $vars["slide1_title"]; ?></h1>
+                  <h4><?php echo $vars["slide1_text"]; ?></h4><br><br> 
                   <a href="#" class="slider-catalog-button">Перейти в каталог</a>
                </div>
             </div>
             <div class="slide slide-2">
                <img src="/images/slider-full/2.jpg" alt="">
                <div class="slider-absolute">
-                  <h1>Обручи-бобручи</h1>
-                  <h4>Налетай торопись топ бобручи СНГ</h4><br><br> 
+                  <h1><?php echo $vars["slide2_title"]; ?></h1>
+                  <h4><?php echo $vars["slide2_text"]; ?></h4><br><br> 
                   <a href="#" class="slider-catalog-button">Перейти в каталог</a>
                </div>
             </div>
             <div class="slide slide-3">
                <img src="/images/slider-full/3.jpg" alt="">
                <div class="slider-absolute">
-                  <h1>Штучки-дрючки</h1>
-                  <h4>Налетай торопись штуки-дрюки<br>
-               такие что любого надрючат!</h4><br><br>
+                  <h1><?php echo $vars["slide3_title"]; ?></h1>
+                  <h4><?php echo $vars["slide3_text"]; ?></h4><br><br>
                   <a href="#" class="slider-catalog-button">Перейти в каталог</a>
                </div>
             </div>
@@ -66,7 +75,6 @@
       <div class="section popular">
          <h2>Популярные товары:</h2>
          <div class="item-cards">
-   <?php require_once "connect.php"; ?>
    <?php $sql = "SELECT * FROM goods WHERE isfavorite IS NOT NULL";
          $result = mysqli_query($conn, $sql);
 
@@ -146,14 +154,15 @@
                   </div>
                </div>
             </div>
-         <?php endwhile; 
-         mysqli_close($conn);
-         ?>
+         <?php endwhile; ?>
          </div>
       </div>
       <!-- new ones END -->
+
       <!-- questions -->
-      <?php require_once "questions.php";?>
+      <div class="questions-wrapper">
+         <?php require_once "questionsform.php";?>
+      </div>
       <!-- questions END -->
    </div>
    <!-- wrapper END -->

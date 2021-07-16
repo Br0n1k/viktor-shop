@@ -78,12 +78,16 @@ textarea:focus, input:focus{
 .wrapper{
    max-width: 1920px;
    margin: 0 auto;
+   padding-bottom: 80px;
 }
 .wrapper h2{
    font-size: 28px;
    margin-top: 40px;
    margin-bottom: 10px;
    text-align: center;
+}
+.main-wrapper{
+   padding-bottom: 0;
 }
 
 
@@ -436,6 +440,9 @@ textarea:focus, input:focus{
    background-color: var(--darkblue);
    cursor: pointer;
 }
+.questions-wrapper{
+   background-color: var(--light);
+}
 
 
 /* SUCCESS FORM */
@@ -534,12 +541,16 @@ textarea:focus, input:focus{
    background-color: var(--light);
    width: 100%;
    max-width: 100%;
+   padding-bottom: 0;
 }
 .item{
    background-color: white;
 }
 .questions{
-   padding-bottom: 0;
+   padding: 20px 20px 80px;
+   max-width: 1200px;
+   margin-left: auto;
+   margin-right: auto;
 }
 .item h4{
    font-size: 20px;
@@ -597,6 +608,7 @@ textarea:focus, input:focus{
 .cart-wrapper{
    background-color: var(--light);
    padding: 40px 20px;
+   padding-bottom: 0;
 }
 .cart-table{
    display: flex;

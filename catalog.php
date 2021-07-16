@@ -81,10 +81,20 @@
 
 
       <!-- questions -->
-      <?php require_once "questions.php";?>
+      <?php require_once "questionsform.php";?>
       <!-- questions END -->
    </div>
    <!-- wrapper END -->
+   <?php
+      $sql_from_vars = "SELECT * FROM variables";
+      $variables = mysqli_query($conn, $sql_from_vars);
+      
+      $vars = [];
+
+      while($var = mysqli_fetch_assoc($variables)){
+         $vars[$var["title"]] = $var["value"];
+      }
+?>
    <!-- footer -->
    <?php require_once "footer.php";?>
    <!-- footer END -->

@@ -4,6 +4,12 @@
    if($_SESSION['is_admin'] != 1){
       header('Location: login.php');
    }
+
+   require_once "../connect.php"; 
+
+   $sql_from_vars = "SELECT * FROM variables";
+   $variables = mysqli_query($conn, $sql_from_vars);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +21,7 @@
    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+   <!-- nav -->
    <div class="navbar">
       <div class="nav-inside">
          <a href="/admin/index.php" class="active">Элементы сайта</a>
@@ -26,10 +33,39 @@
          <a class="fl-right" href="/admin/logout.php">Выйти</a>
       </div>
    </div>
+   <!-- nav END -->
+   <div class="wrapper">
+      <div class="section variables">
+         <h3>Главная + подвал:</h3>
+         <?php while($var = mysqli_fetch_assoc($variables)): ?>
+
+         <form action="/admin/update.php" method="post">
+            <input type="hidden" name="title" value="<?php echo $var["title"]; ?>">
+            <label for="value"><?php echo $var["title"]; ?></label><br>
+            <textarea name="value" rows="3" cols="40"><?php echo $var["value"]; ?></textarea><br>
+            <button type="submit">Изменить</button>
+         </form>
+
+
+         <?php endwhile; 
+            mysqli_close($conn);
+         ?>
+      </div>
+      
 
 
 
 
-   
+
+
+
+
+
+
+
+   </div>
+
+
+
 </body>
 </html>
