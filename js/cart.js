@@ -46,7 +46,7 @@ function goodsOut(data){
          <tr>
             <td>${dataParsed[key].name}</td>
             <td><img src="..${dataParsed[key].img}" alt=""></td>
-            <td>${dataParsed[key].cost}</td>
+            <td>${dataParsed[key].cost} грн.</td>
             <td data-id="${key}">${cart[key]} шт.</td>
             <td class="cart-buttons"><button class="plus-butt" type="button" onclick="plusOne(${key});">+</button></td>
             <td class="cart-buttons"><button class="minus-butt" type="button" onclick="minusOne(${key});">-</button></td>

@@ -1,6 +1,10 @@
 <?php
-   $title = $_POST["title"];
-   $value = $_POST["value"];
+   if(isset($_POST["title"])){
+       $title = $_POST["title"];
+   }
+   if(isset($_POST["value"])){
+       $value = $_POST["value"];
+   }
 
    require_once "../connect.php"; 
 

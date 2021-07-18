@@ -9,7 +9,6 @@
 
    $sql_from_vars = "SELECT * FROM variables";
    $variables = mysqli_query($conn, $sql_from_vars);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +25,8 @@
       <div class="nav-inside">
          <a href="/admin/index.php" class="active">Элементы сайта</a>
          <a href="/admin/goods.php">Редактировать Товары</a>
-         <a href="/admin/add.php">Добавить Товар</a>
+         <a href="/admin/categories.php">Редактировать Категории</a>
+         <a href="/admin/add.php">Добавить Товар/категорию</a>
       </div>
       <div class="nav-inside">
          <h4><?php echo $_SESSION['username']; ?></h4>
@@ -34,6 +34,7 @@
       </div>
    </div>
    <!-- nav END -->
+   
    <div class="wrapper">
       <div class="section variables">
          <h3>Главная + подвал:</h3>
@@ -41,8 +42,10 @@
 
          <form action="/admin/update.php" method="post">
             <input type="hidden" name="title" value="<?php echo $var["title"]; ?>">
-            <label for="value"><?php echo $var["title"]; ?></label><br>
-            <textarea name="value" rows="3" cols="40"><?php echo $var["value"]; ?></textarea><br>
+            <label><?php echo $var["title"]; ?><br>
+               <textarea name="value" rows="3" cols="40"><?php echo $var["value"]; ?></textarea>
+            </label><br>
+            
             <button type="submit">Изменить</button>
          </form>
 
@@ -51,14 +54,16 @@
             mysqli_close($conn);
          ?>
       </div>
+      <div class="section favorites">
+         <h3>Избранное:</h3>
+         
+
+
+
+
+
+      </div>
       
-
-
-
-
-
-
-
 
 
 

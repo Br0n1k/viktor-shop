@@ -54,7 +54,6 @@ a{
 .wrapper{
    margin-left: auto;
    margin-right: auto;
-   padding: 40px 20px;
 }
 .variables form{
    margin-bottom: 20px;
@@ -62,23 +61,12 @@ a{
 .variables form textarea{
    font-size: 16px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.wrapper .section{
+   padding: 30px 20px 2px;
+}
+.wrapper .section img{
+   max-width: 200px;
+}
 
 
 

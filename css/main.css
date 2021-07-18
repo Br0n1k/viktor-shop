@@ -78,16 +78,13 @@ textarea:focus, input:focus{
 .wrapper{
    max-width: 1920px;
    margin: 0 auto;
-   padding-bottom: 80px;
+   padding-bottom: 0;
 }
 .wrapper h2{
    font-size: 28px;
    margin-top: 40px;
    margin-bottom: 10px;
    text-align: center;
-}
-.main-wrapper{
-   padding-bottom: 0;
 }
 
 
@@ -608,6 +605,9 @@ textarea:focus, input:focus{
 .cart-wrapper{
    background-color: var(--light);
    padding: 40px 20px;
+   padding-bottom: 0;
+}
+.cart-section{
    padding-bottom: 0;
 }
 .cart-table{
