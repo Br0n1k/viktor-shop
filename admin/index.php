@@ -9,6 +9,12 @@
 
    $sql_from_vars = "SELECT * FROM variables";
    $variables = mysqli_query($conn, $sql_from_vars);
+
+   $sql_fav = "SELECT * FROM goods";
+   $result_fav = mysqli_query($conn, $sql_fav);
+   while($res_fav = mysqli_fetch_assoc($result_fav)){
+      $fav_arr[] = $res_fav;
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +42,30 @@
    <!-- nav END -->
    
    <div class="wrapper">
+   <div class="section favorites">
+         <h3>Избранное:</h3>
+         <p><b>Сейчас избранное:</b></p>
+         <p><b>---◘---◘---◘---◘---►</b></p>
+         <?php
+            $sql_fav_now = "SELECT * FROM goods WHERE `isfavorite` IS NOT NULL ORDER BY `isfavorite`";
+            $fav_now = mysqli_query($conn, $sql_fav_now);
+
+            while($fav = mysqli_fetch_assoc($fav_now)): ?>
+               <p><?php echo $fav["isfavorite"]; ?> = <?php echo $fav["name"]; ?></p>
+            <?php endwhile; ?><br>
+         <?php for ($i=1; $i <= 4; $i++): ?>
+               <form action="/admin/update.php" method="post">
+                  <label for="fav_<?php echo $i; ?>">Избранный <?php echo $i; ?></label>
+                  <select name="favid" id="fav_<?php echo $i; ?>">
+                     <?php foreach($fav_arr as $fav_ar): ?>
+                        <option value="<?php echo $fav_ar["id"]; ?>"><?php echo $fav_ar["name"]; ?></option>
+                     <?php endforeach; ?>
+                  </select>
+                  <input type="hidden" value="fav_<?php echo $i; ?>" name="favorite">
+                  <button type="submit">Изменить</button>
+               </form><br>
+         <?php endfor; ?>
+      </div>
       <div class="section variables">
          <h3>Главная + подвал:</h3>
          <?php while($var = mysqli_fetch_assoc($variables)): ?>
@@ -45,24 +75,16 @@
             <label><?php echo $var["title"]; ?><br>
                <textarea name="value" rows="3" cols="40"><?php echo $var["value"]; ?></textarea>
             </label><br>
-            
+            <input type="hidden" name="variables">
             <button type="submit">Изменить</button>
          </form>
 
 
          <?php endwhile; 
-            mysqli_close($conn);
+            // mysqli_close($conn);
          ?>
       </div>
-      <div class="section favorites">
-         <h3>Избранное:</h3>
-         
-
-
-
-
-
-      </div>
+      
       
 
 

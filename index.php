@@ -75,7 +75,7 @@
       <div class="section popular">
          <h2>Популярные товары:</h2>
          <div class="item-cards">
-   <?php $sql = "SELECT * FROM goods WHERE isfavorite IS NOT NULL";
+   <?php $sql = "SELECT * FROM goods WHERE isfavorite IS NOT NULL ORDER BY `isfavorite`";
          $result = mysqli_query($conn, $sql);
 
          while($row = mysqli_fetch_assoc($result)):
