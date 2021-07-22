@@ -36,27 +36,38 @@
    <!-- nav END -->
    <div class="wrapper">
       <div class="section add">
-      <form action="/admin/create.php" method="post">
-            <label for="category">Категория:</label><br>
+      <form action="/admin/create.php" method="post" enctype="multipart/form-data">
+            <label for="category">*Категория:</label><br>
             <select name="category" id="category">
                <?php while($row_cat = mysqli_fetch_assoc($result_cat)): ?>
                   <option value="<?php echo $row_cat["name"]; ?>"><?php echo $row_cat["ru_name"]; ?></option>
                <?php endwhile; ?>
             </select><br><br>
-            <label for="name">Имя:</label><br>
-            <input type="text" name="name" id="name"><br><br>
-            <label for="ordertime">Время заказа:</label><br>
+            <label for="name">*Имя:</label><br>
+            <input type="text" name="name" id="name" required ><br><br>
+            <label for="ordertime">*Время заказа:</label><br>
             <select name="ordertime" id="ordertime">
                <option value="order">Пiд замовлення</option>
                <option value="stock">У наявностi</option>
             </select><br><br>
-            <label for="description">Описание товара:</label><br>
-            <textarea name="description" id="description" rows="3" cols="40"></textarea><br><br>
-            <label for="cost">Цена ("грн" уже дописано):</label><br>
-            <input type="text" name="cost" id="cost"><br><br>
+            <label for="description">*Описание товара:</label><br>
+            <textarea name="description" id="description" rows="3" cols="40" required ></textarea><br><br>
+            <label for="cost">*Цена ("грн" уже дописано):</label><br>
+            <input type="text" name="cost" id="cost" required ><br><br>
+            <label for="bigimg">*Фото (основное, желательно 3х2):</label><br>
+            <input type="file" name="bigimg" id="bigimg"><br><br><br>
+
+            <label for="img1">Фото (дополнительное 1):</label><br>
+            <input type="file" name="img1" id="img1"><br><br>
+            <label for="img2">Фото (дополнительное 2):</label><br>
+            <input type="file" name="img2" id="img2"><br><br>
+            <label for="img3">Фото (дополнительное 3):</label><br>
+            <input type="file" name="img3" id="img3"><br><br>
+            <label for="img4">Фото (дополнительное 4):</label><br>
+            <input type="file" name="img4" id="img4"><br><br>
             
             <br>
-            <button type="submit">Добавить товар</button>
+            <button name="goods" type="submit">Добавить товар</button>
          </form>
       </div>
    </div>
