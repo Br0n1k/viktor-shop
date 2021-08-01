@@ -58,7 +58,13 @@
                   <label for="fav_<?php echo $i; ?>">Избранный <?php echo $i; ?></label>
                   <select name="favid" id="fav_<?php echo $i; ?>">
                      <?php foreach($fav_arr as $fav_ar): ?>
-                        <option value="<?php echo $fav_ar["id"]; ?>"><?php echo $fav_ar["name"]; ?></option>
+                        <option value="<?php echo $fav_ar["id"]; ?>"
+                        <?php 
+                           $f = "fav_" . $i;
+                           if($fav_ar["isfavorite"] == $f){
+                              echo "selected";
+                           }
+                        ?>><?php echo $fav_ar["name"]; ?></option>
                      <?php endforeach; ?>
                   </select>
                   <input type="hidden" value="fav_<?php echo $i; ?>" name="favorite">
