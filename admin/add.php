@@ -36,7 +36,8 @@
    <!-- nav END -->
    <div class="wrapper">
       <div class="section add">
-      <form action="/admin/create.php" method="post" enctype="multipart/form-data">
+         <h3>Добавить товар:</h3>
+         <form action="/admin/create.php" method="post" enctype="multipart/form-data">
             <label for="category">*Категория:</label><br>
             <select name="category" id="category">
                <?php while($row_cat = mysqli_fetch_assoc($result_cat)): ?>
@@ -70,6 +71,20 @@
             <button name="goods" type="submit">Добавить товар</button>
          </form>
       </div>
+      <div class="section add">
+         <h3>Добавить категорию:</h3>
+         <form action="/admin/create.php" method="post">
+            <label for="name_en">*Имя на английском (для БД):</label><br>
+            <input type="text" name="name_en" id="name_en" required placeholder="например rezinki"><br><br>
+            <label for="name">*Имя на русском/украинском:</label><br>
+            <input type="text" name="name" id="name" required ><br><br>
+            <label for="description">*Описание категории:</label><br>
+            <textarea name="description" id="description" rows="3" cols="40" required ></textarea><br><br>
+            <button name="category" type="submit">Добавить категорию</button>
+         </form>
+      </div>  
+
+
    </div>
 
 

@@ -1,4 +1,5 @@
 <?php
+//Good add
 if(isset($_POST["goods"])){
     $category = $_POST["category"];
     $name = $_POST["name"];
@@ -10,8 +11,6 @@ if(isset($_POST["goods"])){
     $foldername = pathinfo($bigimg["name"], PATHINFO_FILENAME);
     $imgarr = [];
     $bigimgpath;
-
-
 
     function addImages(){
         global $foldername;
@@ -46,7 +45,6 @@ if(isset($_POST["goods"])){
         addImages();
     }
 
-
     $img1 = $imgarr[0];
     $img2 = $imgarr[1];
     $img3 = $imgarr[2];
@@ -59,8 +57,6 @@ if(isset($_POST["goods"])){
         $ordertime = "У наявностi";
     }
     
-
-
    require_once "../connect.php"; 
 
    $sql = "INSERT INTO `goods` (`id`, `category`, `isfavorite`, `name`, `ordertime`, `img`, `img1`, `img2`, `img3`, `img4`, `description`, `cost`) 
@@ -70,7 +66,29 @@ if(isset($_POST["goods"])){
    mysqli_close($conn);
    header('Location: /admin/add.php');
 }
+//Category add
+if(isset($_POST["category"])){
+    $cat_en = $_POST["name_en"];
+    $cat_ru = $_POST["name"];
+    $desc = $_POST["description"];
+
+    require_once "../connect.php"; 
+    $sql = "INSERT INTO `categories` (`id`, `name`, `ru_name`, `description`) 
+    VALUES (NULL, '$cat_en', '$cat_ru', '$desc')";
+    mysqli_query($conn, $sql);
+
+    mysqli_close($conn);
+    header('Location: /admin/add.php');
+}
    
+
+
+
+
+
+
+
+
 
 
 ?>
