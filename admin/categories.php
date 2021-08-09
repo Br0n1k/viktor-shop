@@ -31,11 +31,43 @@
       </div>
    </div>
    <!-- nav END -->
+   <div class="wrapper">
+      <div class="section">
+         <?php
+            $sql = "SELECT * FROM categories";
+            $categories = mysqli_query($conn, $sql);
+         ?>
+         <h3>Категории:</h3>
+            <?php while($cat = mysqli_fetch_assoc($categories)): ?>
+
+            <form action="/admin/update.php" method="post">
+               <label><?php echo $cat["name"]; ?><br>
+                  <input type="text" name="ru_name" value="<?php echo $cat["ru_name"]; ?>">
+               </label><br>
+               <textarea name="desc" rows="3" cols="40"><?php echo $cat["description"]; ?></textarea><br>
+               <input type="hidden" name="name" value="<?php echo $cat["name"]; ?>">
+               <button name="cat_upd" type="submit">Изменить</button>
+               <button name="cat_del" type="submit">Удалить</button>
+            </form><br><br>
+
+
+            <?php endwhile; 
+               mysqli_close($conn);
+            ?>
 
 
 
 
 
+      </div>
+
+
+
+
+
+
+   </div>
+   
 
 
 
