@@ -34,18 +34,23 @@
    <div class="wrapper">
       <div class="section">
          <?php
-            $sql = "SELECT * FROM categories";
+            $sql = "SELECT * FROM categories ORDER BY name";
             $categories = mysqli_query($conn, $sql);
          ?>
          <h3>Категории:</h3>
+         <h4>Расположение на сайте по числу в начале английского названия, от меньшего к большему<br>Нигде не видно, сделано для сортировки</h4><br>
             <?php while($cat = mysqli_fetch_assoc($categories)): ?>
-
+               <h4><?php echo $cat["ru_name"]; ?>:</h4>
             <form action="/admin/update.php" method="post">
-               <label><?php echo $cat["name"]; ?><br>
+               <label>Англ. название (для БД и сортировки):<br>
+                  <input type="text" name="name" value="<?php echo $cat["name"]; ?>">
+               </label><br>
+               <label>Ру/укр название:<br>
                   <input type="text" name="ru_name" value="<?php echo $cat["ru_name"]; ?>">
                </label><br>
+               <label>Описание категории:</label><br>
                <textarea name="desc" rows="3" cols="40"><?php echo $cat["description"]; ?></textarea><br>
-               <input type="hidden" name="name" value="<?php echo $cat["name"]; ?>">
+               <input type="hidden" name="id" value="<?php echo $cat["id"]; ?>">
                <button name="cat_upd" type="submit">Изменить</button>
                <button name="cat_del" type="submit">Удалить</button>
             </form><br><br>

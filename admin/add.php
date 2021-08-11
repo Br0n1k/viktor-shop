@@ -75,7 +75,7 @@
          <h3>Добавить категорию:</h3>
          <form action="/admin/create.php" method="post">
             <label for="name_en">*Имя на английском (для БД):</label><br>
-            <input type="text" name="name_en" id="name_en" required placeholder="например rezinki"><br><br>
+            <input type="text" name="name_en" id="name_en" required placeholder="например 5rezinki"><br><br>
             <label for="name">*Имя на русском/украинском:</label><br>
             <input type="text" name="name" id="name" required ><br><br>
             <label for="description">*Описание категории:</label><br>

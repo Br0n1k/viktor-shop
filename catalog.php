@@ -29,7 +29,7 @@
    <div class="wrapper">
       <?php require_once "connect.php"; ?>
       <?php 
-         $sql_cat = "SELECT * FROM categories";
+         $sql_cat = "SELECT * FROM categories ORDER BY name";
          $result_cat = mysqli_query($conn, $sql_cat);
       ?>
       <?php while($row_cat = mysqli_fetch_assoc($result_cat)){
