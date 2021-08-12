@@ -59,7 +59,7 @@
                //goods here
             ?>
             <hr>
-               <form action="/admin/create.php" method="post" enctype="multipart/form-data" class="goods-form">
+               <form action="/admin/update.php" method="post" enctype="multipart/form-data" class="goods-form">
                   <div class="item-name">
                      Ссылка на сайте: <a href="/item.php?item=<?php echo $row_cat_out["id"]; ?>"><b><?php echo $row_cat_out["name"]; ?></b></a>
                   </div><br>
@@ -104,8 +104,8 @@
                      <label for="cost">*Цена ("грн." уже дописано):</label><br>
                      <input type="text" name="cost" id="cost" required value="<?php echo $row_cat_out["cost"]; ?>">
                   </div><br>
-                  <button name="good_upd" type="submit">Изменить</button>
-                  <button name="good_del" type="submit">Удалить</button>
+                  <button name="good_upd" value="<?php echo $row_cat_out["id"]; ?>" type="submit">Изменить</button>
+                  <button name="good_del" value="<?php echo $row_cat_out["id"]; ?>" type="submit">Удалить</button>
                </form>
 
             <?php endwhile; ?>
