@@ -81,10 +81,10 @@
                      <img src="<?php echo $row_cat_out["img"]; ?>" alt="">
                   </div>
                   <div class="item-imgs">Дополнительные: <br>
-                     <img src="<?php echo $row_cat_out["img1"]; ?>" alt="">
-                     <img src="<?php echo $row_cat_out["img2"]; ?>" alt="">
-                     <img src="<?php echo $row_cat_out["img3"]; ?>" alt="">
-                     <img src="<?php echo $row_cat_out["img4"]; ?>" alt="">
+                     <img src="<?php echo $row_cat_out["img1"]; ?>" alt="No image 1 ">
+                     <img src="<?php echo $row_cat_out["img2"]; ?>" alt="No image 2 ">
+                     <img src="<?php echo $row_cat_out["img3"]; ?>" alt="No image 3 ">
+                     <img src="<?php echo $row_cat_out["img4"]; ?>" alt="No image 4 ">
                   </div><br>
                   <label for="bigimg">*Фото (основное, желательно 3х2):</label><br>
                   <input type="file" name="bigimg" id="bigimg"><br><br>

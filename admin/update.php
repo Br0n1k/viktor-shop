@@ -67,37 +67,44 @@
 
     //Goods
     elseif (isset($_POST["good_upd"])){
-        // var_dump($_FILES) . "</br>";
-
         $id = $_POST["good_upd"];
         $name = $_POST["ru_name"];
         $desc = $_POST["description"];
         $cost = $_POST["cost"];
-
         $bigimg = $_FILES["bigimg"];
-
         $bigimg_name = $_FILES["bigimg"]["name"];
-        $bigimg_folder = pathinfo($bigimg_name, PATHINFO_FILENAME);
 
+        $sql_old = mysqli_query($conn, "SELECT * FROM `goods` WHERE `id` = '$id'");
+        $old_good = mysqli_fetch_assoc($sql_old);
+        $old_bigimg = $old_good["img"];
+        $old_bigimg_folder = pathinfo($old_bigimg, PATHINFO_DIRNAME);
+        
         if($bigimg_name){
-            echo "FILE HERE!";
-
-
-
-
+            $path = ".." . $old_bigimg_folder . "/" . time() . $bigimg_name;
+            $path_db = $old_bigimg_folder . "/" . time() . $bigimg_name;
+            move_uploaded_file($bigimg["tmp_name"], $path);
+            mysqli_query($conn, "UPDATE `goods` SET `img` = '$path_db' WHERE `id` = '$id'");
+            unlink(".." . $old_bigimg);
         }
+
         for ($i=1; $i <= 4; $i++) { 
             if($_FILES["img{$i}"]["name"] != ""){
+                $old_img = $old_good["img{$i}"];
                 $img = $_FILES["img{$i}"];
-                $path = "../images/goods/" . $foldername . "/" . time() . $img["name"];
+                $path = ".." . $old_bigimg_folder . "/" . time() . $img["name"];
+                $imgpath_db = $old_bigimg_folder . "/" . time() . $img["name"];
                 move_uploaded_file($img["tmp_name"], $path);
-                $imgpath = "/images/goods/" . $foldername . "/" . time() . $img["name"];
-                $imgarr[] = $imgpath;
-            }
-            else{
-                $imgarr[] = "";
+                mysqli_query($conn, "UPDATE `goods` SET `img{$i}` = '$imgpath_db' WHERE `id` = '$id'");
+                if($old_img != ""){
+                    unlink(".." . $old_img);
+                }
             }
         }
+
+        
+
+        header('Location: /admin/goods.php');
+
 
 
 
