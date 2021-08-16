@@ -100,41 +100,14 @@
                 }
             }
         }
+    header('Location: /admin/goods.php');
+    }
+    elseif (isset($_POST["good_del"])){
+        $id = $_POST["good_del"];
 
-        
-
+        mysqli_query($conn, "DELETE FROM `goods` WHERE `id` = '$id'");
         header('Location: /admin/goods.php');
-
-
-
-
-
-
-        // echo $bigimg_name . "<br>";
-        // echo $bigimg_folder . "<br>";
-
-        // echo $id . "<br>";
-
-
-
-
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     mysqli_close($conn);
-    
 ?>
